@@ -21,10 +21,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Tusam Group | Заявки от 49 ₽. Система под ключ.",
-    description:
-      "Сайт → Трафик → CRM → Автоматизация. 50+ заявок в месяц.",
+    description: "...",
     url: "https://tusamgroup.ru",
     type: "website",
+    images: [
+      {
+        url: "https://tusam-marketing.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tusam Group — система лидогенерации",
+      },
+    ],
   },
 };
 
