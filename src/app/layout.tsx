@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "Tusam Group | Система лидогенерации под ключ",
     description:
-      "Сайт → Трафик → CRM → Автоматизация. 50+ заявок в месяц или возврат денег. Окупаемость за 2 недели.",
+      "Сайт → Трафик → CRM → Автоматизация. 50+ заявок в месяц. Окупаемость за 2 недели.",
     images: [
       {
         url: `${SITE_URL}/og-image.png`,
