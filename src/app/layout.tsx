@@ -11,7 +11,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const SITE_URL = "https://tusamgroup.ru";
+const SITE_URL = "https://tusam-marketing.vercel.app";
 const SITE_NAME = "Tusam Group";
 
 export const viewport: Viewport = {
@@ -67,9 +67,9 @@ export const metadata: Metadata = {
       "Сайт → Трафик → CRM → Автоматизация. 50+ заявок в месяц или возврат денег. Окупаемость за 2 недели.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1080,
-        height: 1080,
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
         alt: "Tusam Group — система лидогенерации",
         type: "image/png",
       },
@@ -80,7 +80,14 @@ export const metadata: Metadata = {
     title: "Tusam Group | Система лидогенерации под ключ",
     description:
       "Сайт + Яндекс Директ + CRM + автоворонки. 50+ заявок в месяц или возврат денег.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Tusam Group — система лидогенерации",
+      },
+    ],
   },
   robots: {
     index: true,
