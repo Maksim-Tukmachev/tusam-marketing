@@ -90,7 +90,7 @@ export function ContactPageHero() {
       <div className="max-w-[1520px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16 md:mb-20 gap-6 sm:gap-8">
           <div className="max-w-4xl">
-            <div className="reveal-text mb-12">
+            <div className="reveal-text">
               <span className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-black/30 block mb-6">
                 Заявка
               </span>

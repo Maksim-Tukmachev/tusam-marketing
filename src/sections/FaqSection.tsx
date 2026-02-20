@@ -46,16 +46,19 @@ export function FaqSection() {
       },
     });
 
-    ScrollTrigger.batch(".faq-card", {
-      onEnter: (elements) => {
-        gsap.fromTo(
-          elements,
-          { y: 60, opacity: 0, scale: 0.98 },
-          { y: 0, opacity: 1, scale: 1, stagger: 0.1, duration: 1, ease: "power4.out", overwrite: true }
-        );
+    gsap.from(".faq-card", {
+      y: 60,
+      opacity: 0,
+      scale: 0.98,
+      stagger: 0.1,
+      duration: 1,
+      ease: "power4.out",
+      overwrite: true,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 88%",
+        once: true,
       },
-      start: "top 88%",
-      once: true,
     });
   }, { scope: containerRef });
 
@@ -71,7 +74,7 @@ export function FaqSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="max-w-[1520px] mx-auto">
-        <div className="faq-header mb-10 sm:mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div className="faq-header mb-10 sm:mb-16 md:mb-24 flex flex-col md:flex-row justify-between lg:items-end gap-8">
           <div className="max-w-3xl">
             <SectionLabel label="FAQ" />
             <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-[1.1] text-black mt-8">

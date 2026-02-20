@@ -14,7 +14,7 @@ export function ProjectsSection() {
           <h2 className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-[-0.05em] text-black mt-8">
             Результаты, которые окупают<span className="text-[#b2ff00]">.</span>
           </h2>
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between md:items-end gap-8 mt-8">
             <p className="text-xl md:text-2xl font-medium tracking-tight text-[#747474] max-w-xl">
               Средний ROI — 300%. Заявка — от 490 ₽ <span className="text-black">при рыночной цене 2 000 ₽</span>.
             </p>

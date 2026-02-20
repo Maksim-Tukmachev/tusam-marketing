@@ -10,7 +10,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: "/contact", label: "Контакты" },
 ];
 
-export const CONTACT_EMAIL = "hello@tusam.group";
+export const CONTACT_EMAIL = "director@tusamgroup.ru";
 
 export const CLIENTS: ClientLogo[] = [
   { name: "Client 1", logoUrl: `${BASE}/images/ZPxsifLckLSiu70Rqq21X5OURKM.jpg?width=674&height=260` },

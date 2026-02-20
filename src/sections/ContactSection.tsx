@@ -52,7 +52,7 @@ export function ContactSection() {
           </div>
 
           <div className="lg:col-span-7 flex flex-col justify-between reveal-el">
-            <div className="relative h-full min-h-[500px] sm:min-h-[650px] rounded-[24px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden bg-[#0a0a0a] p-5 sm:p-10 md:p-16 flex flex-col">
+            <div className="relative h-full min-h-[580px] sm:min-h-[720px] rounded-[24px] sm:rounded-[40px] md:rounded-[60px] overflow-hidden bg-[#0a0a0a] p-5 sm:p-10 md:p-16 flex flex-col">
               <div className="absolute inset-0">
                 <video
                   src={CONTACT_VIDEO_URL}
@@ -65,7 +65,7 @@ export function ContactSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-black via-transparent to-transparent" />
               </div>
 
-              <div className="relative z-10 flex flex-col h-full">
+              <div className="relative z-10 flex flex-col h-full gap-10 sm:gap-14">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
                     <div className="h-[2px] w-12 bg-[#bcff00]" />
@@ -76,14 +76,14 @@ export function ContactSection() {
                   <div className="text-white/20 font-mono text-xs">tusam group</div>
                 </div>
 
-                <div className="mt-10 sm:mt-20">
+                <div className="mt-14 sm:mt-24">
                   <h3 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter leading-none">
                     Оставьте номер — <br /> <span className="text-[#bcff00]">перезвоним</span> <br /> за 5 минут.
                   </h3>
                 </div>
 
                 <div className="mt-auto group cursor-pointer">
-                  <div className="bg-white rounded-[24px] sm:rounded-[40px] p-5 sm:p-6 md:p-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-5 sm:gap-8 shadow-2xl transform transition-all duration-700 ease-expo group-hover:-translate-y-6 group-hover:rotate-[-1deg]">
+                  <div className="bg-white rounded-[24px] sm:rounded-[40px] p-5 sm:p-6 md:p-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-10 shadow-2xl transform transition-all duration-700 ease-expo group-hover:-translate-y-6 group-hover:rotate-[-1deg]">
                     <div className="w-full h-44 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-[16px] sm:rounded-[24px] overflow-hidden relative shrink-0">
                       <Image
                         src={CONTACT_AUDIT_IMAGE}

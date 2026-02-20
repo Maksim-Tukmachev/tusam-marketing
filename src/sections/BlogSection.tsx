@@ -31,23 +31,26 @@ export function BlogSection() {
       },
     });
 
-    ScrollTrigger.batch(".blog-card", {
-      onEnter: (elements) => {
-        gsap.fromTo(
-          elements,
-          { y: 60, opacity: 0, scale: 0.95 },
-          { y: 0, opacity: 1, scale: 1, stagger: 0.15, duration: 1.2, ease: "power4.out", overwrite: true }
-        );
+    gsap.from(".blog-card", {
+      y: 60,
+      opacity: 0,
+      scale: 0.95,
+      stagger: 0.15,
+      duration: 1.2,
+      ease: "power4.out",
+      overwrite: true,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 85%",
+        once: true,
       },
-      start: "top 85%",
-      once: true,
     });
   }, { scope: containerRef });
 
   return (
     <section ref={containerRef} className="relative z-20 px-4 md:px-9 py-16 sm:py-24 md:py-32 bg-white">
       <div className="max-w-[1520px] mx-auto">
-        <div className="blog-header mb-10 sm:mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div className="blog-header mb-10 sm:mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="max-w-3xl">
             <SectionLabel label="Блог" />
             <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-[1.1] text-black mt-8">

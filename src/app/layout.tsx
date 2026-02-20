@@ -108,12 +108,12 @@ function OrganizationJsonLd() {
     logo: `${SITE_URL}/logo.png`,
     description:
       "Система лидогенерации под ключ: сайт, реклама, CRM, автоворонки. 50+ заявок в месяц — гарантия в договоре.",
-    email: "hello@tusam.group",
+    email: "director@tusamgroup.ru",
     sameAs: ["https://t.me/tusam_group", "https://wa.me/tusam_group"],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
-      email: "hello@tusam.group",
+      email: "director@tusamgroup.ru",
       availableLanguage: ["Russian"],
     },
     foundingDate: "2024",

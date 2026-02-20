@@ -147,7 +147,7 @@ export function ServicesSection() {
 
                     {/* Стрелочка: по умолчанию зелёная, при наведении и при нажатии — белая */}
                     <div
-                      className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full border flex items-center justify-center transition-all duration-500 ${
+                      className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full border flex shrink-0 items-center justify-center transition-all duration-500 ${
                         isActive
                           ? "bg-white border-white rotate-90"
                           : "bg-[#bcff00]/20 border-black rotate-0 group-hover:bg-white/15 group-hover:border-white"

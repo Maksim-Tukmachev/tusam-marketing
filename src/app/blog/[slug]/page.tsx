@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
@@ -123,13 +122,15 @@ export default async function BlogPostPage({ params }: Props) {
         <article className="max-w-[1520px] mx-auto px-4 md:px-9 w-full pb-16 sm:pb-24 md:pb-32">
           {/* Breadcrumb */}
           <div className="pt-8 md:pt-12 pb-6">
-            <Link
+            <TransitionLink
               href="/blog"
+              label="Все статьи"
+              subtitle="Блог"
               className="group inline-flex items-center gap-2 text-sm font-semibold text-[#999] hover:text-black transition-colors"
             >
               <span className="transition-transform group-hover:-translate-x-1">←</span>
               Все статьи
-            </Link>
+            </TransitionLink>
           </div>
 
           {/* Hero Image */}

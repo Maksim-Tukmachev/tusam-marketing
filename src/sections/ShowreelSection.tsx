@@ -37,7 +37,7 @@ export function ShowreelSection() {
             От нуля до заявок<br />
             <span className="text-[#747474]">за 14 дней.</span>
           </h2>
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mt-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mt-10">
             <p className="text-xl md:text-2xl font-medium tracking-tight text-[#747474] max-w-xl">
               Пошаговый процесс с конкретными сроками. <span className="text-black">Вы видите каждый этап.</span>
             </p>

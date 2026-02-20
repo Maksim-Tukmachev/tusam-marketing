@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { SidebarContactForm } from "@/components/forms/SidebarContactForm";
@@ -19,13 +18,15 @@ export function ProjectCaseContent({ project, paragraphs }: Props) {
     <article className="max-w-[1520px] mx-auto px-4 md:px-9 pb-16 sm:pb-24 md:pb-32">
       {/* ── Breadcrumb ── */}
       <div className="pt-6 sm:pt-8 md:pt-12 pb-4 sm:pb-6">
-        <Link
+        <TransitionLink
           href="/projects"
+          label="Все кейсы"
+          subtitle="Кейсы"
           className="group inline-flex items-center gap-2 text-sm font-semibold text-[#999] hover:text-black transition-colors"
         >
           <span className="transition-transform group-hover:-translate-x-1">←</span>
           Все кейсы
-        </Link>
+        </TransitionLink>
       </div>
 
       {/* ── Badges ── */}
