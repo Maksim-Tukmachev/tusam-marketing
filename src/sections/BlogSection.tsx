@@ -125,7 +125,7 @@ export function BlogSection() {
               <div className="relative z-10 flex justify-between items-start w-full">
                 <div className="relative w-28 h-8">
                   <Image
-                    src={BLOG_LOGO_WHITE || "/logo-white.svg"}
+                    src={"/icons/white.svg"}
                     alt=""
                     fill
                     className="object-contain object-left"

@@ -15,7 +15,7 @@ import { FAQ_ITEMS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Tusam Group | Система лидогенерации под ключ — от 49 ₽ за заявку",
   description:
-    "Сайт + Яндекс Директ + CRM + автоворонки. 50+ заявок в месяц. Окупаемость за 14 дней. Бесплатный аудит за 24 часа.",
+    "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 14 дней. Бесплатный аудит за 24 часа.",
   alternates: {
     canonical: "https://tusamgroup.ru",
   },

@@ -84,7 +84,7 @@ export function FaqSection() {
           </div>
           <div className="flex flex-col items-start md:items-end gap-6">
             <p className="text-lg md:text-xl font-medium tracking-tight text-[#747474] max-w-sm md:text-right">
-              Не нашли ответ? Напишите — перезвоним за 5 минут.
+              Не нашли ответ? Напишите — перезвоним за 15 минут.
             </p>
             <ButtonPill href="/contact" variant="black">
               Написать

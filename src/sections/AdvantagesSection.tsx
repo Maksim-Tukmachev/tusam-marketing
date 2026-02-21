@@ -64,7 +64,7 @@ const CASE_SLIDES = [
     ],
   },
 ] as const;
-const AUTOPLAY_MS = 6500;
+const AUTOPLAY_MS = 8500;
 
 export function AdvantagesSection() {
   const containerRef = useRef<HTMLDivElement>(null);

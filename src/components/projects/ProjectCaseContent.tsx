@@ -235,7 +235,7 @@ export function ProjectCaseContent({ project, paragraphs }: Props) {
             Готовы к таким же цифрам?
           </h2>
           <p className="text-base sm:text-lg text-white/50 max-w-lg">
-            Оставьте заявку — перезвоним за 5 минут. Бесплатный аудит за 24 часа.
+            Оставьте заявку — перезвоним за 15 минут. Бесплатный аудит за 24 часа.
           </p>
         </div>
         <div className="flex flex-col items-start sm:items-center gap-3 shrink-0 w-full sm:w-auto">

@@ -1,12 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ButtonPill } from "@/components/ui/ButtonPill";
-import { HERO_VIDEO_URL, HERO_AUDIT_IMAGE } from "@/lib/constants";
+import { HERO_VIDEO_URL, CONTACT_PHONE, CONTACT_PHONE_HREF } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -69,12 +68,12 @@ export function HeroSection() {
               Забудьте про дорогие лиды! <span className="text-[#b2ff00]">Заявки от&nbsp;49₽</span>
             </h1>
             <p className="text-base sm:text-lg md:text-[24px] lg:text-[34px] xl:text-[42px] font-medium tracking-[-0.03em] text-white/90 mt-2 sm:mt-3 md:mt-4 max-w-2xl">
-              Сайт + Яндекс Директ + система лидогенерации, которая окупается за 3 недели.
+              Сайт + Яндекс Директ + Vk Ads + Avito = система лидогенерации, которая окупается за 3 недели.
             </p>
           </div>
 
           <div className="hidden lg:flex absolute right-16 top-1/2 -translate-y-1/2 flex-col gap-2 text-right">
-            {["Продающие сайты", "Яндекс Директ", "Google Ads", "CRM и воронки", "Заявки для малого и среднего бизнеса"].map((item) => (
+            {["Продающие сайты", "Яндекс Директ", "Vk Ads", "Avito под ключ", "Маркетинг для малого и среднего бизнеса"].map((item) => (
               <span key={item} className="text-white text-lg font-semibold tracking-tight hover:text-[#bcff00] cursor-pointer transition-colors">
                 {item}
               </span>
@@ -82,31 +81,38 @@ export function HeroSection() {
           </div>
 
           <div className="mt-auto flex flex-col lg:flex-row items-start lg:items-end justify-between gap-5 md:gap-6 lg:gap-8">
-            <div className="hidden lg:block max-w-md mb-0 lg:mb-0">
+            <div className="hidden lg:block max-w-md">
               <p className="text-base lg:text-xl text-[#999797] leading-[1.3] tracking-tight">
                 Приводим 50+ лидов в месяц. Средний ROI 300%. <span className="text-white font-semibold">Система окупается за 3 недели.</span>
               </p>
             </div>
-
-            <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-5 lg:p-6 flex flex-col sm:flex-row gap-4 sm:gap-5 w-full sm:max-w-[500px] shadow-2xl items-stretch sm:items-center">
-              <div className="relative w-full h-32 sm:w-28 sm:h-32 md:w-28 md:h-32 lg:w-32 lg:h-36 rounded-xl overflow-hidden shrink-0">
-                <Image src={HERO_AUDIT_IMAGE} alt="Аудит" fill className="object-cover" />
-              </div>
-              <div className="flex flex-col gap-2 sm:gap-3">
-                <div>
-                  <h3 className="text-black text-lg sm:text-xl md:text-xl lg:text-2xl font-bold tracking-tight">Получить аудит роста</h3>
-                  <p className="text-[#666] text-xs sm:text-sm font-medium leading-snug mt-1">
-                    Ближайший слот: сегодня. Анализ ниши и прогноз по заявкам за 24 часа.
-                  </p>
-                </div>
-                <ButtonPill
-                  href="/contact"
-                  variant="black"
-                  className="w-full mt-1 text-xs sm:text-sm md:text-[15px]"
-                >
-                  Получить аудит
-                </ButtonPill>
-              </div>
+            <div className="flex flex-col lg:flex-row gap-2 lg:gap-1.5 p-2 lg:p-1.5 bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded-2xl lg:rounded-full shadow-lg border border-gray-200/50 dark:border-white/10 w-full lg:w-max mx-auto lg:mx-0 items-stretch lg:items-center">
+              <ButtonPill
+                href="/contact"
+                label="Оставить заявку"
+                variant="lime"
+                className="w-full lg:w-auto flex-1 lg:flex-none min-w-0 h-12 flex items-center justify-center px-5 sm:px-6 text-sm font-semibold tracking-tight rounded-full transition-transform active:scale-95"
+              >
+                Оставить заявку
+              </ButtonPill>
+              <a
+                href={CONTACT_PHONE_HREF}
+                className="w-full lg:w-auto flex-1 lg:flex-none min-w-0 min-h-[48px] h-12 flex items-center justify-center py-3.5 px-5 sm:px-6 text-sm font-semibold text-[#0a0a0a] dark:text-white bg-white dark:bg-white/5 hover:bg-[#b2ff00] hover:text-black rounded-full transition-all shrink-0 lg:shrink-0 whitespace-nowrap box-border"
+                aria-label="Позвонить"
+              >
+                <span className="lg:hidden">{CONTACT_PHONE}</span>
+                <svg className="hidden lg:block shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </a>
+              <ButtonPill
+                href="/projects"
+                label="Смотреть кейсы"
+                variant="black"
+                className="w-full lg:w-auto flex-1 lg:flex-none min-w-0 h-12 flex items-center justify-center px-5 sm:px-6 text-sm font-medium rounded-full transition-transform active:scale-95"
+              >
+                Смотреть кейсы
+              </ButtonPill>
             </div>
           </div>
         </div>

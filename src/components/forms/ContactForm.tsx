@@ -33,8 +33,7 @@ export function ContactForm() {
           <input
             type="text"
             name="CompanyName"
-            placeholder="Название компании*"
-            required
+            placeholder="Название компании"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
             className={inputClass}
@@ -66,8 +65,7 @@ export function ContactForm() {
           <input
             type="email"
             name="E-mail"
-            placeholder="Email*"
-            required
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={inputClass}
@@ -77,8 +75,7 @@ export function ContactForm() {
           <input
             type="text"
             name="Message"
-            placeholder="Сообщение*"
-            required
+            placeholder="Сообщение"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className={inputClass}

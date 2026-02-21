@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react";
 import { TransitionLink } from "@/components/transition/TransitionLink";
 import {
   CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_HREF,
   COPYRIGHT,
   LEGAL_LINKS,
   FOOTER_NAV,
@@ -16,7 +18,14 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const MARQUEE_TEXT = "ПОЛУЧИТЬ ЗАЯВКИ";
+const MARQUEE_TEXTS = [
+  "ПОЛУЧИТЬ ЗАЯВКИ",
+  "ЛИДЫ ОТ 49 ₽",
+  "ОКУПАЕМОСТЬ ЗА 3 НЕДЕЛИ",
+  "ЯНДЕКС ДИРЕКТ",
+  "САЙТ + РЕКЛАМА + CRM",
+  "БЕСПЛАТНЫЙ АУДИТ",
+];
 const MARQUEE_REPEAT = 12;
 
 type FooterProps = { variant?: "default" | "compact" };
@@ -28,26 +37,34 @@ export function Footer({ variant = "default" }: FooterProps) {
 
   useGSAP(() => {
     if (isCompact) return;
-    const trigger = containerRef.current;
-    const content = contentRef.current;
-    if (!trigger || !content) return;
+    const ctx = containerRef.current;
+    if (!ctx) return;
 
-    gsap.fromTo(
-      content,
-      { y: 200, scale: 0.92, opacity: 0 },
-      {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger,
-          start: "top bottom",
-          end: "top 15%",
-          scrub: 2,
-        },
-      }
-    );
+    const marquee = ctx.querySelector(".footer-marquee");
+    const cta = ctx.querySelector(".footer-cta");
+    const nav = ctx.querySelector(".footer-nav");
+    const bottom = ctx.querySelector(".footer-bottom");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ctx,
+        start: "top 85%",
+        once: true,
+      },
+    });
+
+    if (marquee) {
+      tl.fromTo(marquee, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" });
+    }
+    if (cta) {
+      tl.fromTo(cta, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: "power3.out" }, "-=0.4");
+    }
+    if (nav) {
+      tl.fromTo(nav, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.5");
+    }
+    if (bottom) {
+      tl.fromTo(bottom, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, "-=0.4");
+    }
   }, { scope: containerRef, dependencies: [isCompact] });
 
   const scrollToTop = () => {
@@ -68,13 +85,13 @@ export function Footer({ variant = "default" }: FooterProps) {
         className="flex flex-col"
       >
         {/* ── Marquee Ticker ── */}
-        <div className="relative overflow-hidden border-b border-white/[0.06] py-3 sm:py-4">
+        <div className="footer-marquee relative overflow-hidden border-b border-white/[0.06] py-3 sm:py-4 origin-left">
           <div className="flex animate-marquee whitespace-nowrap">
             {Array.from({ length: MARQUEE_REPEAT }).map((_, i) => (
               <span key={i} className="flex items-center gap-4 sm:gap-6 mx-3 sm:mx-4">
                 <span className="w-2 h-2 rounded-full bg-[#bcff00] shrink-0" />
                 <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-white/40">
-                  {MARQUEE_TEXT}
+                  {MARQUEE_TEXTS[i % MARQUEE_TEXTS.length]}
                 </span>
               </span>
             ))}
@@ -85,7 +102,7 @@ export function Footer({ variant = "default" }: FooterProps) {
         <div className="max-w-[1520px] mx-auto w-full px-4 md:px-9 flex flex-col py-10 sm:py-16 md:py-20 gap-12 sm:gap-16 md:gap-20">
 
           {/* ── CTA Block ── */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 sm:gap-10">
+          <div className="footer-cta flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 sm:gap-10">
             <div>
               <p className="text-[10px] font-mono font-bold uppercase tracking-[0.4em] text-white/30 mb-4 sm:mb-6">
                 Свяжитесь с нами
@@ -107,6 +124,15 @@ export function Footer({ variant = "default" }: FooterProps) {
                   {CONTACT_EMAIL}
                 </span>
               </a>
+              <a
+                href={CONTACT_PHONE_HREF}
+                className="group flex items-center gap-3"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-[#bcff00] group-hover:scale-150 transition-transform duration-300" />
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#bcff00] transition-colors duration-300">
+                  {CONTACT_PHONE}
+                </span>
+              </a>
               <TransitionLink
                 href="/contact"
                 label="Оставить заявку"
@@ -120,8 +146,8 @@ export function Footer({ variant = "default" }: FooterProps) {
             </div>
           </div>
 
-          {/* ── Navigation + Testimonial ── */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-6">
+          {/* ── Navigation + Dashboard ── */}
+          <div className="footer-nav grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-6">
             {FOOTER_NAV.map((group) => (
               <div key={group.title} className="lg:col-span-2 flex flex-col gap-5 sm:gap-6">
                 <span className="text-[10px] font-bold text-white/25 uppercase tracking-[0.25em]">
@@ -164,7 +190,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                   <div className="flex items-center gap-2.5">
                     <span className="w-2 h-2 rounded-full bg-[#bcff00] animate-pulse" />
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                      Live Dashboard
+                      Tusam в цифрах
                     </span>
                   </div>
                   <div className="flex gap-1.5">
@@ -180,7 +206,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                     { value: "300%", label: "Средний ROI", trend: "+12%" },
                     { value: "490 ₽", label: "Стоимость лида", trend: "−40%" },
                     { value: "14", label: "Дней до запуска", trend: "дней" },
-                    { value: "50+", label: "Заявок / мес", trend: "гарантия" },
+                    { value: "50+", label: "в месяц", trend: "заявок" },
                   ].map((stat, i) => (
                     <div
                       key={stat.label}
@@ -207,9 +233,6 @@ export function Footer({ variant = "default" }: FooterProps) {
 
                 {/* Footer strip */}
                 <div className="px-5 sm:px-8 py-3 sm:py-4 bg-[#bcff00]/[0.04] flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-white/30 uppercase tracking-wider">
-                    Партнёр Яндекс · 5★ рейтинг
-                  </span>
                   <TransitionLink
                     href="/projects"
                     label="Кейсы"
@@ -223,7 +246,7 @@ export function Footer({ variant = "default" }: FooterProps) {
           </div>
 
           {/* ── Bottom Bar ── */}
-          <div className="flex flex-col gap-6 sm:gap-8">
+          <div className="footer-bottom flex flex-col gap-6 sm:gap-8">
             {/* Giant logotype + back to top */}
             <div className="flex items-end justify-between border-b border-white/[0.06] pb-5 sm:pb-8">
               <div className="flex items-baseline gap-1">

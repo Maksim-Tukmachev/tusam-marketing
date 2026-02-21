@@ -67,13 +67,13 @@ export function Preloader() {
               animate={{ y: 0 }} 
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Global / EST. 2024
+              Global / EST. 2004
             </motion.span>
           </div>
 
           {/* Центральный гигантский счетчик */}
           <div className="flex flex-col items-center justify-center relative flex-1">
-            <div className="flex items-baseline overflow-hidden h-[25vw] md:h-[18vw]">
+            <div className="flex items-baseline overflow-hidden">
               <motion.span 
                 className="text-[30vw] md:text-[22vw] font-bold text-white leading-none tracking-tighter"
                 initial={{ y: 100, opacity: 0 }}

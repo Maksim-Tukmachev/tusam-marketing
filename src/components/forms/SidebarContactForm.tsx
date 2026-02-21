@@ -24,7 +24,7 @@ export function SidebarContactForm() {
           </svg>
         </div>
         <p className="text-lg font-bold text-white mb-1">Заявка отправлена</p>
-        <p className="text-sm text-white/50">Перезвоним в течение 5 минут</p>
+        <p className="text-sm text-white/50">Перезвоним в течение 15 минут</p>
       </div>
     );
   }
@@ -38,7 +38,7 @@ export function SidebarContactForm() {
         Обсудить задачу
       </p>
       <p className="text-xs text-white/40 mb-5">
-        Перезвоним за 5 минут. Бесплатный аудит.
+        Перезвоним за 15 минут. Бесплатный аудит.
       </p>
 
       <div className="flex flex-col gap-3 mb-4">

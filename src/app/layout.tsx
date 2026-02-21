@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { TransitionProvider } from "@/components/transition/TransitionContext";
 import { TransitionOverlay } from "@/components/transition/TransitionOverlay";
 import { Preloader } from "@/components/transition/Preloader";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Tusam Group",
   },
   description:
-    "Сайт + Яндекс Директ + CRM + автоворонки. 50+ заявок в месяц или возврат денег. Окупаемость за 2 недели. Бесплатный аудит за 24 часа.",
+    "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 2 недели. Бесплатный аудит за 24 часа.",
   keywords: [
     "лидогенерация",
     "заявки под ключ",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: "Tusam Group | Система лидогенерации под ключ",
     description:
-      "Сайт → Трафик → CRM → Автоматизация. 50+ заявок в месяц. Окупаемость за 2 недели.",
+      "Сайт → Трафик → CRM → Автоматизация. Окупаемость за 2 недели.",
     images: [
       {
         url: `${SITE_URL}/og-image.png`,
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tusam Group | Система лидогенерации под ключ",
     description:
-      "Сайт + Яндекс Директ + CRM + автоворонки. 50+ заявок в месяц или возврат денег.",
+      "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 2 недели",
     images: [
       {
         url: `${SITE_URL}/og-image.png`,
@@ -114,7 +115,7 @@ function OrganizationJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     description:
-      "Система лидогенерации под ключ: сайт, реклама, CRM, автоворонки. 50+ заявок в месяц — гарантия в договоре.",
+      "Система лидогенерации под ключ: сайт, реклама, CRM, автоворонки",
     email: "director@tusamgroup.ru",
     sameAs: ["https://t.me/tusam_group", "https://wa.me/tusam_group"],
     contactPoint: {
@@ -219,6 +220,7 @@ export default function RootLayout({
           {children}
           <TransitionOverlay />
         </TransitionProvider>
+        <CookieConsent />
       </body>
     </html>
   );

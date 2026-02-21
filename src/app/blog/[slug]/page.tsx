@@ -253,7 +253,7 @@ export default async function BlogPostPage({ params }: Props) {
                 Хотите столько же заявок?
               </p>
               <p className="text-base text-white/50">
-                Бесплатный аудит за 24 часа. Перезвоним через 5 минут.
+                Бесплатный аудит за 24 часа. Перезвоним через 15 минут.
               </p>
             </div>
             <ButtonPill href="/contact" variant="lime" className="shrink-0 py-4 px-10">

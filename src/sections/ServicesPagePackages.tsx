@@ -16,7 +16,7 @@ export function ServicesPagePackages() {
           Выберите свой масштаб роста
         </h2>
         <p className="text-base sm:text-lg text-[#666] max-w-xl mb-10 sm:mb-14 md:mb-20">
-          Каждый пакет — полная система, а не набор отдельных услуг. Гарантия 50+ заявок или возврат денег.
+          Каждый пакет — полная система, а не набор отдельных услуг. Один подрядчик, один результат.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch pt-6">

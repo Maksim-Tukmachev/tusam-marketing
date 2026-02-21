@@ -9,6 +9,7 @@ interface ButtonPillProps {
   children: ReactNode;
   variant?: "black" | "lime";
   className?: string;
+  label?: string;
   onClick?: () => void;
   type?: "button" | "submit";
 }
@@ -18,6 +19,7 @@ export function ButtonPill({
   children,
   variant = "black",
   className = "",
+  label,
   onClick,
   type = "button",
 }: ButtonPillProps) {
@@ -75,6 +77,7 @@ export function ButtonPill({
       <motion.div {...motionProps} className="inline-flex">
         <TransitionLink
           href={href}
+          label={label ?? (typeof children === "string" ? children : "")}
           className={`${base} ${variants[variant]} ${className}`}
         >
           {content}
