@@ -9,14 +9,32 @@ export interface ClientLogo {
   logoUrl: string;
 }
 
+export interface ServiceSeo {
+  title: string;
+  description: string;
+  keywords?: string[];
+}
+
 export interface ServiceItem {
   id: string;
+  slug: string;
   number: string;
   title: string;
   description: string;
   tags: string[];
   /** Цена «от» для страницы услуг, например "от 25 000 ₽" */
   priceFrom?: string;
+  /** SEO: title ≤60, description ≤160 */
+  seo?: ServiceSeo;
+  /** Полный текст для страницы услуги (абзацы через \n\n) */
+  fullDescription?: string;
+  faq?: FaqItem[];
+  /** Что входит в услугу */
+  includes?: string[];
+  /** Для кого подходит */
+  forWhom?: string[];
+  /** Преимущества */
+  benefits?: string[];
 }
 
 export interface ServicePackage {

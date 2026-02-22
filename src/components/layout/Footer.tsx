@@ -80,10 +80,7 @@ export function Footer({ variant = "default" }: FooterProps) {
           : "relative w-full bg-[#0a0a0a] text-white z-10 flex flex-col overflow-hidden"
       }
     >
-      <div
-        ref={contentRef}
-        className="flex flex-col"
-      >
+      <div ref={contentRef} className="flex flex-col">
         {/* ── Marquee Ticker ── */}
         <div className="footer-marquee relative overflow-hidden border-b border-white/[0.06] py-3 sm:py-4 origin-left">
           <div className="flex animate-marquee whitespace-nowrap">
@@ -100,7 +97,7 @@ export function Footer({ variant = "default" }: FooterProps) {
 
         {/* ── Main Content ── */}
         <div className="max-w-[1520px] mx-auto w-full px-4 md:px-9 flex flex-col py-10 sm:py-16 md:py-20 gap-12 sm:gap-16 md:gap-20">
-
+          
           {/* ── CTA Block ── */}
           <div className="footer-cta flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 sm:gap-10">
             <div>
@@ -115,19 +112,13 @@ export function Footer({ variant = "default" }: FooterProps) {
             </div>
 
             <div className="flex flex-col items-start lg:items-end gap-4 sm:gap-6 shrink-0">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="group flex items-center gap-3"
-              >
+              <a href={`mailto:${CONTACT_EMAIL}`} className="group flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#bcff00] group-hover:scale-150 transition-transform duration-300" />
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#bcff00] transition-colors duration-300">
                   {CONTACT_EMAIL}
                 </span>
               </a>
-              <a
-                href={CONTACT_PHONE_HREF}
-                className="group flex items-center gap-3"
-              >
+              <a href={CONTACT_PHONE_HREF} className="group flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#bcff00] group-hover:scale-150 transition-transform duration-300" />
                 <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#bcff00] transition-colors duration-300">
                   {CONTACT_PHONE}
@@ -136,7 +127,7 @@ export function Footer({ variant = "default" }: FooterProps) {
               <TransitionLink
                 href="/contact"
                 label="Оставить заявку"
-                className="inline-flex items-center gap-3 rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-[#bcff00] text-black text-xs sm:text-sm font-bold tracking-tight hover:bg-white transition-colors duration-300"
+                className="inline-flex items-center gap-3 rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-[#bcff00] text-black text-xs sm:text-sm font-bold tracking-tight hover:bg-white transition-colors duration-300 mt-2"
               >
                 Оставить заявку
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="transform -rotate-45">
@@ -146,14 +137,15 @@ export function Footer({ variant = "default" }: FooterProps) {
             </div>
           </div>
 
-          {/* ── Navigation + Dashboard ── */}
-          <div className="footer-nav grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-6">
+          {/* ── Navigation ── */}
+          {/* Убрали лишние блоки, оставили только чистую навигацию с шикарными отступами */}
+          <div className="footer-nav grid grid-cols-2 sm:grid-cols-3 lg:flex lg:gap-32 gap-8 sm:gap-10 border-t border-white/[0.06] pt-10 sm:pt-12">
             {FOOTER_NAV.map((group) => (
-              <div key={group.title} className="lg:col-span-2 flex flex-col gap-5 sm:gap-6">
+              <div key={group.title} className="flex flex-col gap-5 sm:gap-6 min-w-[140px]">
                 <span className="text-[10px] font-bold text-white/25 uppercase tracking-[0.25em]">
                   {group.title}
                 </span>
-                <ul className="flex flex-col gap-2.5 sm:gap-3">
+                <ul className="flex flex-col gap-3">
                   {group.links.map((link) =>
                     link.external ? (
                       <li key={link.label}>
@@ -181,79 +173,17 @@ export function Footer({ variant = "default" }: FooterProps) {
                 </ul>
               </div>
             ))}
-
-            {/* Stats Dashboard Card */}
-            <div className="col-span-2 sm:col-span-3 lg:col-span-6 lg:pl-8">
-              <div className="relative rounded-[20px] sm:rounded-[24px] bg-white/[0.04] border border-white/[0.06] overflow-hidden group hover:border-[#bcff00]/20 transition-colors duration-500">
-                {/* Header */}
-                <div className="flex items-center justify-between px-5 sm:px-8 pt-5 sm:pt-7 pb-4 border-b border-white/[0.06]">
-                  <div className="flex items-center gap-2.5">
-                    <span className="w-2 h-2 rounded-full bg-[#bcff00] animate-pulse" />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                      Tusam в цифрах
-                    </span>
-                  </div>
-                  <div className="flex gap-1.5">
-                    <div className="w-2 h-2 rounded-full bg-white/10" />
-                    <div className="w-2 h-2 rounded-full bg-white/10" />
-                    <div className="w-2 h-2 rounded-full bg-[#bcff00]/40" />
-                  </div>
-                </div>
-
-                {/* Metrics Grid */}
-                <div className="grid grid-cols-2 divide-x divide-white/[0.06]">
-                  {[
-                    { value: "300%", label: "Средний ROI", trend: "+12%" },
-                    { value: "490 ₽", label: "Стоимость лида", trend: "−40%" },
-                    { value: "14", label: "Дней до запуска", trend: "дней" },
-                    { value: "50+", label: "в месяц", trend: "заявок" },
-                  ].map((stat, i) => (
-                    <div
-                      key={stat.label}
-                      className={`px-5 sm:px-8 py-4 sm:py-5 ${i < 2 ? "border-b border-white/[0.06]" : ""}`}
-                    >
-                      <div className="flex items-baseline gap-2 mb-1">
-                        <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white">
-                          {stat.value}
-                        </span>
-                        <span className={`text-[10px] font-bold tracking-wide ${
-                          stat.trend.startsWith("+") || stat.trend.startsWith("−")
-                            ? stat.trend.startsWith("+") ? "text-[#bcff00]" : "text-[#bcff00]"
-                            : "text-white/25"
-                        }`}>
-                          {stat.trend}
-                        </span>
-                      </div>
-                      <span className="text-[10px] sm:text-[11px] font-medium text-white/30 uppercase tracking-wider">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Footer strip */}
-                <div className="px-5 sm:px-8 py-3 sm:py-4 bg-[#bcff00]/[0.04] flex items-center justify-between">
-                  <TransitionLink
-                    href="/projects"
-                    label="Кейсы"
-                    className="text-[10px] font-bold text-[#bcff00] uppercase tracking-wider hover:text-white transition-colors"
-                  >
-                    Смотреть кейсы →
-                  </TransitionLink>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* ── Bottom Bar ── */}
-          <div className="footer-bottom flex flex-col gap-6 sm:gap-8">
+          <div className="footer-bottom flex flex-col gap-6 sm:gap-8 mt-4">
             {/* Giant logotype + back to top */}
             <div className="flex items-end justify-between border-b border-white/[0.06] pb-5 sm:pb-8">
               <div className="flex items-baseline gap-1">
                 {"TUSAM".split("").map((char, i) => (
                   <span
                     key={i}
-                    className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[140px] font-bold tracking-[-0.06em] leading-none text-white/[0.04] select-none"
+                    className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[140px] font-bold tracking-[-0.06em] leading-none text-white/[0.03] select-none"
                   >
                     {char}
                   </span>
@@ -291,10 +221,10 @@ export function Footer({ variant = "default" }: FooterProps) {
                 ))}
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#bcff00] animate-pulse" />
                 <span className="text-white/40 normal-case tracking-normal text-[10px]">
                   Мы онлайн
                 </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#bcff00] animate-pulse" />
               </div>
             </div>
           </div>

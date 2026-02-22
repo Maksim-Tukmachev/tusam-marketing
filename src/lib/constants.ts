@@ -1,4 +1,4 @@
-import type { NavLink, ClientLogo, ServiceItem, ServicePackage, ProjectItem, StepItem, BlogPost, FaqItem, FooterTestimonial, FooterNavGroup } from "./types";
+import type { NavLink, ClientLogo, ServicePackage, ProjectItem, StepItem, BlogPost, FaqItem, FooterTestimonial, FooterNavGroup } from "./types";
 
 const BASE = "https://framerusercontent.com";
 
@@ -14,6 +14,9 @@ export const CONTACT_EMAIL = "director@tusamgroup.ru";
 export const CONTACT_PHONE = "8 (986) 723-18-84";
 export const CONTACT_PHONE_HREF = "tel:+79867231884";
 
+export const SITE_URL = "https://tusam.group";
+
+export { SERVICES } from "@/data/services";
 
 export const CLIENTS: ClientLogo[] = [
   { name: "Client 1", logoUrl: `${BASE}/images/ZPxsifLckLSiu70Rqq21X5OURKM.jpg?width=674&height=260` },
@@ -26,54 +29,6 @@ export const CLIENTS: ClientLogo[] = [
   { name: "Client 8", logoUrl: `${BASE}/images/v2RlT0NslgtLqXUctHj0B4BhnaM.svg?width=104&height=27` },
   { name: "Client 9", logoUrl: `${BASE}/images/uUPphFlv4ZFSbai5rI7rL9KUVg.svg?width=132&height=27` },
   { name: "Client 10", logoUrl: `${BASE}/images/7ZclqS5N5eOKPlWnSY0qcR6aEOs.jpg?width=486&height=150` },
-];
-
-export const SERVICES: ServiceItem[] = [
-  {
-    id: "conversion-site",
-    number: "001",
-    title: "Конверсионный сайт под заявки",
-    description:
-      "Не визитка и не шаблон. Каждый экран заточен на одно — заявку. Оффер, форма, доказательства, срочность. Средняя конверсия наших сайтов — 8,4%. У конкурентов — 1–2%.",
-    tags: ["Лендинг", "Многостраничник", "A/B тесты"],
-    priceFrom: "от 45 000 ₽",
-  },
-  {
-    id: "yandex-google",
-    number: "002",
-    title: "Трафик из Яндекс Директ и Google Ads",
-    description:
-      "Настраиваем рекламу так, чтобы каждый рубль возвращался с прибылью. Структура кампаний, минус-слова, ретаргетинг. Еженедельные отчёты по заявкам, а не по кликам.",
-    tags: ["Контекст", "Ретаргетинг", "ROI 300%"],
-    priceFrom: "от 35 000 ₽",
-  },
-  {
-    id: "crm-funnels",
-    number: "003",
-    title: "CRM и автоворонки",
-    description:
-      "Заявка пришла — CRM подхватила. Мгновенное уведомление менеджеру, письмо клиенту, напоминание через 15 минут. Ни один лид не теряется. Конверсия в сделку растёт на 40%.",
-    tags: ["AmoCRM", "Telegram-бот", "Автоматизация"],
-    priceFrom: "от 25 000 ₽",
-  },
-  {
-    id: "lead-cost",
-    number: "004",
-    title: "Снижение стоимости заявки в 2–4 раза",
-    description:
-      "Ваш лид стоит 2 000 ₽? У наших клиентов — 490 ₽. Оптимизация посадочных, чистка кампаний, тест связок. Больше заявок за тот же бюджет.",
-    tags: ["Оптимизация", "Аналитика", "Экономия x4"],
-    priceFrom: "от 20 000 ₽",
-  },
-  {
-    id: "scale-strategy",
-    number: "005",
-    title: "Масштабирование без слива бюджета",
-    description:
-      "Когда система работает — масштабируем: новые кампании, регионы, площадки. Рост заявок x2–x3 без пропорционального роста расходов.",
-    tags: ["Масштаб", "Рост x3", "Стратегия"],
-    priceFrom: "входит в пакеты",
-  },
 ];
 
 export const SERVICE_PACKAGES: ServicePackage[] = [
@@ -514,7 +469,7 @@ export const FOOTER_NAV: FooterNavGroup[] = [
   {
     title: "Компания",
     links: [
-      { href: "/contact", label: "О нас" },
+      { href: "/services", label: "Услуги" },
       { href: "/projects", label: "Кейсы" },
       { href: "/blog", label: "Блог" },
       { href: "/#faq", label: "FAQ" },

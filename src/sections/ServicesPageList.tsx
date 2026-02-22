@@ -1,4 +1,5 @@
 import { SERVICES } from "@/lib/constants";
+import { TransitionLink } from "@/components/transition/TransitionLink";
 
 export function ServicesPageList() {
   return (
@@ -8,9 +9,11 @@ export function ServicesPageList() {
           const isEven = idx % 2 === 0;
 
           return (
-            <div
+            <TransitionLink
               key={service.id}
-              className={`group relative border-t border-black/8 last:border-b py-10 md:py-16 ${
+              href={`/services/${service.slug}`}
+              label={service.title}
+              className={`block group relative border-t border-black/8 last:border-b py-10 md:py-16 ${
                 isEven ? "" : ""
               }`}
             >
@@ -70,7 +73,7 @@ export function ServicesPageList() {
                   </div>
                 </div>
               </div>
-            </div>
+            </TransitionLink>
           );
         })}
       </div>
