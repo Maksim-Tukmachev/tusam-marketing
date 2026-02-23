@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
@@ -147,11 +146,16 @@ export function ContactForm() {
             className="mt-1 w-4 h-4 rounded border-[#dbd9d9] text-[#0a0a0a] focus:ring-[#0a0a0a] shrink-0"
           />
           <span className="text-sm text-[#0a0a0a]/70 leading-relaxed">
-            Согласен на{" "}
-            <Link href="/privacy" className="underline hover:text-[#0a0a0a]">
-              обработку персональных данных
-            </Link>{" "}
-            в соответствии с политикой конфиденциальности.
+            Согласен на обработку персональных данных в соответствии с{" "}
+            <a
+              href="/docs/policy_tusamgroup.ru_2026-02-18.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[#0a0a0a]"
+            >
+              политикой конфиденциальности
+            </a>
+            .
           </span>
         </label>
       </div>

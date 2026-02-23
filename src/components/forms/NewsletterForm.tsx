@@ -6,9 +6,11 @@ import { ButtonPill } from "@/components/ui/ButtonPill";
 export function NewsletterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!consent) return;
     // Stub
   }
 
@@ -37,7 +39,29 @@ export function NewsletterForm() {
           className={inputClass}
         />
       </div>
-      <ButtonPill type="submit" variant="black">
+      <label className="flex items-start gap-2.5 cursor-pointer">
+        <input
+          type="checkbox"
+          name="consent"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          required
+          className="mt-0.5 w-4 h-4 rounded border-black/20 text-[#0a0a0a] focus:ring-[#0a0a0a] shrink-0"
+        />
+        <span className="text-xs text-[#0a0a0a]/70 leading-relaxed">
+          Согласен на обработку данных в соответствии с{" "}
+          <a
+            href="/docs/policy_tusamgroup.ru_2026-02-18.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-[#0a0a0a]"
+          >
+            политикой конфиденциальности
+          </a>
+          .
+        </span>
+      </label>
+      <ButtonPill type="submit" variant="black" disabled={!consent}>
         Subscribe
       </ButtonPill>
     </form>

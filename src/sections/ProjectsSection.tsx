@@ -77,7 +77,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
               sizes="(max-width: 768px) 100vw, 50vw"
             />
 
-            {/* Logo (center, appears on hover) */}
+            {/* Logo (center, appears on hover) 
             <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
               <div className="relative w-40 h-16 opacity-0 translate-y-4 scale-95 group-hover/card:opacity-100 group-hover/card:translate-y-0 group-hover/card:scale-100 transition-all duration-500 ease-out delay-100">
                 <Image
@@ -87,7 +87,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
                   className="object-contain brightness-0 invert"
                 />
               </div>
-            </div>
+            </div>*/}
 
             {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />

@@ -12,6 +12,7 @@ interface ButtonPillProps {
   label?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }
 
 export function ButtonPill({
@@ -22,6 +23,7 @@ export function ButtonPill({
   label,
   onClick,
   type = "button",
+  disabled = false,
 }: ButtonPillProps) {
   const base =
     "group/btn relative inline-flex items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] transition-all duration-300 overflow-hidden";
@@ -89,7 +91,8 @@ export function ButtonPill({
   return (
     <motion.button
       type={type}
-      className={`${base} ${variants[variant]} ${className}`}
+      disabled={disabled}
+      className={`${base} ${variants[variant]} ${className} disabled:opacity-50 disabled:cursor-not-allowed`}
       onClick={onClick}
       {...motionProps}
     >

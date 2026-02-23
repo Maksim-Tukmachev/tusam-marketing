@@ -211,14 +211,15 @@ export function Footer({ variant = "default" }: FooterProps) {
               <p>{COPYRIGHT}</p>
               <div className="flex flex-wrap gap-3 sm:gap-8">
                 {LEGAL_LINKS.map((link) => (
-                  <TransitionLink
+                  <a
                     key={link.href}
                     href={link.href}
-                    label={link.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-white/60 transition-colors"
                   >
                     {link.label}
-                  </TransitionLink>
+                  </a>
                 ))}
               </div>
               <div className="flex items-center gap-2">

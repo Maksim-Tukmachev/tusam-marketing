@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 
-const HERO_IMAGE = "https://framerusercontent.com/images/HqEIolN35c8KX2cpbltEvBRWGp0.png?width=1734&height=1154";
+const HERO_IMAGE = '/images/service.webp';
 
 export function ServicesPageHero() {
   return (

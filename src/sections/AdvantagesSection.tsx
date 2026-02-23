@@ -13,54 +13,53 @@ import { ADVANTAGES_IMAGE, PROJECTS } from "@/lib/constants";
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
-
-const CASE_SLIDES = [
+export const CASE_SLIDES = [
   {
     id: "01",
-    pill: "Мебель",
-    title: "53 заявки за 30 дней с нуля",
+    pill: "Строительство",
+    title: "150 заявок в месяц и снижение CPL почти в 2 раза",
     subtitle:
-      "Собрали связку лендинг + Яндекс Директ + CRM. Клиент начал получать поток заявок уже в первый месяц.",
+      "Запустили таргет с квизом, настроили ретаргетинг и CRM. Доля квалифицированных лидов на постройку коттеджей выросла до 58%.",
     image: PROJECTS[0]?.imageUrl ?? ADVANTAGES_IMAGE,
-    imageAlt: "Кейс мебельной компании",
-    focusMetric: "340%",
-    focusMetricLabel: "ROI проекта",
+    imageAlt: "Кейс: строительство коттеджей под ключ",
+    focusMetric: "3,8%",
+    focusMetricLabel: "конверсия в договор",
     stats: [
-      { label: "Выручка", value: "+1,1 млн ₽" },
-      { label: "Стоимость лида", value: "490 ₽" },
-      { label: "Окупаемость", value: "12-й день" },
+      { label: "Стоимость лида", value: "850–1000 ₽" },
+      { label: "Квал. заявки", value: "до 58%" },
+      { label: "Лидов в месяц", value: "150" },
     ],
   },
   {
     id: "02",
-    pill: "HR",
-    title: "Лид подешевел с 2 100 ₽ до 520 ₽",
+    pill: "Медицина",
+    title: "Удвоили доход клиники и ушли от скидочных купонов",
     subtitle:
-      "Пересобрали посадочную, обновили структуру кампаний и внедрили прозрачную аналитику по заявкам и сделкам.",
-    image: PROJECTS[1]?.imageUrl ?? ADVANTAGES_IMAGE,
-    imageAlt: "Кейс рекрутингового агентства",
-    focusMetric: "4x",
-    focusMetricLabel: "рост потока заявок",
+      "Упаковали конкретные чек-апы, запустили таргет и внедрили сегментацию. Клиника получает стабильный поток пациентов без агрессивного дисконта.",
+    image: PROJECTS[3]?.imageUrl ?? ADVANTAGES_IMAGE,
+    imageAlt: "Кейс: частный медицинский центр",
+    focusMetric: "×2",
+    focusMetricLabel: "рост дохода за 3 месяца",
     stats: [
-      { label: "Рост выручки", value: "+1,2 млн ₽" },
-      { label: "Новый CPL", value: "520 ₽" },
-      { label: "Период", value: "2 месяца" },
+      { label: "Повторные визиты", value: "32%" },
+      { label: "Стоимость лида", value: "250–350 ₽" },
+      { label: "Заявок в месяц", value: "180–200" },
     ],
   },
   {
     id: "03",
-    pill: "eCommerce",
-    title: "67 заявок и окупаемость уже на 11-й день",
+    pill: "EdTech",
+    title: "Удвоили продажи курса при CPL 380–450 ₽",
     subtitle:
-      "Сфокусировались на горячем спросе, усилили ретаргетинг и убрали лишние шаги в форме заявки.",
-    image: PROJECTS[2]?.imageUrl ?? ADVANTAGES_IMAGE,
-    imageAlt: "Кейс интернет-магазина",
-    focusMetric: "67",
-    focusMetricLabel: "заявок за 1 месяц",
+      "Пересобрали креативы, разделили трафик на холодный и теплый, внедрили автоворонку. Рост продаж произошел без раздувания бюджета.",
+    image: PROJECTS[4]?.imageUrl ?? ADVANTAGES_IMAGE,
+    imageAlt: "Кейс: онлайн-школа",
+    focusMetric: "8–9%",
+    focusMetricLabel: "конверсия в оплату",
     stats: [
-      { label: "Средний чек", value: "18 000 ₽" },
-      { label: "Стоимость лида", value: "580 ₽" },
-      { label: "Окупаемость", value: "11 дней" },
+      { label: "Рост продаж", value: "×2 за 2 мес." },
+      { label: "Стоимость заявки", value: "380–450 ₽" },
+      { label: "Чек курса", value: "до 35 000 ₽" },
     ],
   },
 ] as const;

@@ -96,7 +96,15 @@ export function CookieConsent() {
                     Мы используем cookie
                   </p>
                   <p className="text-xs text-white/50 leading-relaxed">
-                    Для аналитики и улучшения сайта. Никаких данных третьим лицам.
+                    Мы используем cookie для аналитики и улучшения сайта.{" "}
+                    <a
+                      href="/docs/Cookie_Notification.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#bcff00] hover:text-white underline underline-offset-2 transition-colors"
+                    >
+                      Подробнее
+                    </a>
                   </p>
                 </div>
               </div>

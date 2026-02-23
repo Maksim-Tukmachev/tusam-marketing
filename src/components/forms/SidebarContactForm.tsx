@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 export function SidebarContactForm() {
   const [name, setName] = useState("");
@@ -110,10 +109,16 @@ export function SidebarContactForm() {
           className="mt-0.5 w-3.5 h-3.5 rounded border-white/20 bg-white/10 text-[#b2ff00] focus:ring-[#b2ff00]/30 shrink-0"
         />
         <span className="text-[11px] text-white/40 leading-relaxed">
-          Согласен на{" "}
-          <Link href="/privacy" className="underline hover:text-white/60">
-            обработку данных
-          </Link>
+          Согласен на обработку данных в соответствии с{" "}
+          <a
+            href="/docs/policy_tusamgroup.ru_2026-02-18.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white/60"
+          >
+            политикой конфиденциальности
+          </a>
+          .
         </span>
       </label>
 
