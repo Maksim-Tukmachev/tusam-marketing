@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+type SubmitState = "idle" | "loading" | "success" | "error";
+
 export function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [name, setName] = useState("");
@@ -10,15 +12,68 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [consent, setConsent] = useState(false);
+  const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!consent) return;
-    // Stub: log or send to API
+    setSubmitState("loading");
+    setErrorMessage("");
+    const url = process.env.NEXT_PUBLIC_TUSAM_API_URL;
+    const apiKey = process.env.NEXT_PUBLIC_TUSAM_API_KEY;
+    if (!url || !apiKey) {
+      setErrorMessage("Форма не настроена");
+      setSubmitState("error");
+      return;
+    }
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Accept: "application/ld+json",
+          "Content-Type": "application/ld+json",
+          "X-API-KEY": apiKey,
+        },
+        body: JSON.stringify({
+          companyName: companyName.trim() || "",
+          name: name.trim(),
+          phone: phone.trim(),
+          email: email.trim() || "",
+          message: message.trim() || "",
+          consent: true,
+          source: "website",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setErrorMessage(data.error ?? "Не удалось отправить заявку");
+        setSubmitState("error");
+        return;
+      }
+      setSubmitState("success");
+    } catch {
+      setErrorMessage("Ошибка сети. Попробуйте ещё раз.");
+      setSubmitState("error");
+    }
   }
 
   const inputClass =
     "w-full bg-transparent border-0 border-b border-[#dbd9d9] py-3 text-[#0a0a0a] placeholder:text-[#999] text-base font-medium tracking-[-0.04em] focus:outline-none focus:border-[#0a0a0a]";
+
+  if (submitState === "success") {
+    return (
+      <div className="bg-white rounded-[18px] p-6 text-center">
+        <div className="w-14 h-14 rounded-full bg-[#b2ff00] mx-auto mb-4 flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M5 13L9 17L19 7" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+        <p className="text-xl font-bold text-[#0a0a0a] mb-1">Заявка отправлена</p>
+        <p className="text-base text-[#0a0a0a]/60">Перезвоним в течение 15 минут</p>
+      </div>
+    );
+  }
 
   return (
     <form
@@ -100,12 +155,15 @@ export function ContactForm() {
           </span>
         </label>
       </div>
+      {submitState === "error" && errorMessage && (
+        <p className="text-sm text-red-600 font-medium">{errorMessage}</p>
+      )}
       <button
         type="submit"
-        disabled={!consent}
+        disabled={!consent || submitState === "loading"}
         className="w-full bg-[#0a0a0a] text-white rounded-[50px] py-4 text-lg font-semibold tracking-[-0.04em] hover:bg-[#1a1a1a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Получить заявки сейчас
+        {submitState === "loading" ? "Отправка…" : "Получить заявки сейчас"}
       </button>
     </form>
   );

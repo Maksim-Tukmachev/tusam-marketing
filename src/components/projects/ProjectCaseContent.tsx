@@ -48,7 +48,7 @@ export function ProjectCaseContent({ project, paragraphs }: Props) {
       <section className="mb-10 sm:mb-16 md:mb-24">
         <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[21/9] rounded-[20px] sm:rounded-[28px] overflow-hidden bg-[#111]">
           <Image
-            src={project.imageUrl}
+            src={project.imageLargeUrl}
             alt={project.name}
             fill
             className="object-cover"

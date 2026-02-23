@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { CONTACT_VIDEO_URL, CONTACT_AUDIT_IMAGE } from "@/lib/constants";
+import { CONTACT_VIDEO_URL } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -88,7 +88,7 @@ export function ContactSection() {
     {/* Картинка (оставили как просил) */}
     <div className="w-full h-44 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-[16px] sm:rounded-[24px] overflow-hidden relative shrink-0">
       <Image
-        src={CONTACT_AUDIT_IMAGE}
+        src={"/images/image.webp"}
         alt="Аудит"
         fill
         className="object-cover"

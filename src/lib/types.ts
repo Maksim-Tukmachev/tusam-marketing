@@ -60,6 +60,7 @@ export interface ProjectItem {
   sector: string;
   logoUrl: string;
   imageUrl: string;
+  imageLargeUrl: string;
   /** Краткое описание для карточки и meta */
   excerpt?: string;
   /** Полное описание кейса (абзацы через \n\n) */

@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { BLOG_POSTS, BLOG_HERO_IMAGE, BLOG_LOGO_WHITE } from "@/lib/constants";
+import { BLOG_POSTS, BLOG_HERO_IMAGE, BLOG_LOGO_WHITE, YELLOW_ICON } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -114,7 +114,7 @@ export function BlogSection() {
               className="blog-card group relative h-full min-h-[360px] sm:min-h-[480px] lg:min-h-full rounded-[32px] overflow-hidden flex flex-col justify-between p-6 sm:p-8 md:p-10"
             >
               <Image
-                src={BLOG_HERO_IMAGE}
+                src={'/images/news.webp'}
                 alt="Блог"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
@@ -133,7 +133,7 @@ export function BlogSection() {
                 </div>
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-md overflow-hidden">
                   <Image
-                    src="https://framerusercontent.com/images/cyocIIxmfHraQKroedozYMmy7XQ.svg?width=320&height=320"
+                    src={YELLOW_ICON}
                     alt=""
                     width={48}
                     height={48}

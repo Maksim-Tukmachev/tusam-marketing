@@ -8,11 +8,50 @@ export function SidebarContactForm() {
   const [phone, setPhone] = useState("");
   const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!consent) return;
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMessage("");
+    const url = process.env.NEXT_PUBLIC_TUSAM_API_URL;
+    const apiKey = process.env.NEXT_PUBLIC_TUSAM_API_KEY;
+    if (!url || !apiKey) {
+      setErrorMessage("Форма не настроена");
+      setLoading(false);
+      return;
+    }
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Accept: "application/ld+json",
+          "Content-Type": "application/ld+json",
+          "X-API-KEY": apiKey,
+        },
+        body: JSON.stringify({
+          companyName: "",
+          name: name.trim(),
+          phone: phone.trim(),
+          email: "",
+          message: "",
+          consent: true,
+          source: "website",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setErrorMessage(data.error ?? "Не удалось отправить заявку");
+        setLoading(false);
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setErrorMessage("Ошибка сети. Попробуйте ещё раз.");
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -78,12 +117,16 @@ export function SidebarContactForm() {
         </span>
       </label>
 
+      {errorMessage && (
+        <p className="text-xs text-red-400 mb-3">{errorMessage}</p>
+      )}
+
       <button
         type="submit"
-        disabled={!consent}
+        disabled={!consent || loading}
         className="w-full bg-[#b2ff00] text-black rounded-xl py-3 text-sm font-bold tracking-tight hover:bg-[#a3e600] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
       >
-        Оставить заявку
+        {loading ? "Отправка…" : "Оставить заявку"}
       </button>
     </form>
   );

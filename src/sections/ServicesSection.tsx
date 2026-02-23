@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
+import { TransitionLink } from "@/components/transition/TransitionLink";
 import { SERVICES, YELLOW_ICON, SERVICES_BG_IMAGE } from "@/lib/constants";
 
 if (typeof window !== "undefined") {
@@ -107,8 +108,8 @@ export function ServicesSection() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] opacity-60" />
         </div>
 
-        {/* Content Layer */}
-        <div className="relative z-10 px-5 sm:px-6 md:px-12 lg:px-20 py-12 sm:py-20 md:py-28">
+        {/* Content Layer — в сетке max-w-[1520px], на адаптиве свой отступ */}
+        <div className="relative z-10 max-w-[1520px] mx-auto w-full px-4 md:px-9 2xl:px-0 py-12 sm:py-20 md:py-28">
           
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-10 sm:mb-16 md:mb-20">
@@ -170,11 +171,11 @@ export function ServicesSection() {
                     className="overflow-hidden"
                     style={{ height: 0, opacity: 0 }}
                   >
-                    <div className="pb-10 md:pb-16 pl-8 sm:pl-[50px] md:pl-[100px] flex flex-col md:flex-row gap-8 md:gap-20">
+                    <div className="pb-10 md:pb-16 flex flex-col md:flex-row md:items-end gap-8 md:gap-20">
                       <p className="text-lg md:text-xl text-white/60 max-w-xl leading-relaxed">
                         {service.description}
                       </p>
-                      <div className="flex flex-wrap gap-2 h-fit">
+                      <div className="flex flex-wrap items-center gap-2 h-fit">
                         {service.tags.map((tag) => (
                           <span
                             key={tag}
@@ -183,6 +184,16 @@ export function ServicesSection() {
                             {tag}
                           </span>
                         ))}
+                        <TransitionLink
+                          href={`/services/${service.slug}`}
+                          label={service.title}
+                          className="inline-flex ml-0 md:ml-2"
+                        >
+                          <span className="inline-flex items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)] transition-all duration-300 overflow-hidden group/btn">
+                            <span className="relative">Перейти на услугу</span>
+                            <span className="relative w-2.5 h-2.5 rounded-full bg-black shrink-0 transition-transform duration-300 group-hover/btn:scale-125" aria-hidden />
+                          </span>
+                        </TransitionLink>
                       </div>
                     </div>
                   </div>
@@ -191,8 +202,8 @@ export function ServicesSection() {
             })}
           </div>
 
-          {/* Footer Button */}
-          <div className="mt-16 flex justify-center md:justify-start">
+          {/* CTA */}
+          <div className="mt-16 flex justify-center sm:justify-start">
             <ButtonPill href="/contact" variant="lime">
               Запустить систему
             </ButtonPill>

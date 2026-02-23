@@ -95,8 +95,9 @@ export function Footer({ variant = "default" }: FooterProps) {
           </div>
         </div>
 
-        {/* ── Main Content ── */}
-        <div className="max-w-[1520px] mx-auto w-full px-4 md:px-9 flex flex-col py-10 sm:py-16 md:py-20 gap-12 sm:gap-16 md:gap-20">
+        {/* ── Main Content (в сетке как на главной) ── */}
+        <div className="px-4 md:px-9 w-full">
+          <div className="max-w-[1520px] mx-auto w-full flex flex-col py-10 sm:py-16 md:py-20 gap-12 sm:gap-16 md:gap-20">
           
           {/* ── CTA Block ── */}
           <div className="footer-cta flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 sm:gap-10">
@@ -227,6 +228,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#bcff00] animate-pulse" />
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
