@@ -112,22 +112,22 @@ export function ServicesSection() {
         {/* Content Layer — в сетке max-w-[1520px], на адаптиве свой отступ */}
         <div className="relative z-10 max-w-[1520px] mx-auto w-full px-4 md:px-9 2xl:px-0 py-12 sm:py-20 md:py-28">
           
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-10 sm:mb-16 md:mb-20">
-            <div>
+          {/* Header — сетка: заголовок и описание в одну линию, выровнены */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-8 mb-10 sm:mb-16 md:mb-20 items-start">
+            <div className="lg:col-span-5">
               <SectionLabel label="Как мы строим поток заявок" dark />
               <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] text-white mt-6">
                 Не реклама. Система<span className="text-[#bcff00]">.</span>
               </h2>
             </div>
-            <div className="max-w-md">
+            <div className="lg:col-span-7 max-w-xl">
               <p className="text-base sm:text-xl md:text-2xl font-medium tracking-tight text-white/70 leading-relaxed">
                 <span className="text-white">Сайт → Трафик → CRM → Автоматизация.</span> Единая система, где каждый элемент усиливает следующий.
               </p>
             </div>
           </div>
 
-          {/* Accordion List */}
+          {/* Accordion List — в столбец */}
           <div className="flex flex-col border-t border-white/10">
             {SERVICES.map((service, index) => {
               const isActive = activeIndex === index;
@@ -166,38 +166,36 @@ export function ServicesSection() {
                     </div>
                   </div>
 
-                  {/* Expandable Content Area — высота и opacity только через GSAP */}
+                  {/* Expandable Content Area — отступ слева 70px (на мобилке меньше), кнопка под тегами */}
                   <div
                     ref={(el) => { contentRefs.current[index] = el; }}
                     className="overflow-hidden"
                     style={{ height: 0, opacity: 0 }}
                   >
-                    <div className="pb-10 md:pb-16 flex flex-col md:flex-row md:items-end gap-8 md:gap-20">
-                      <p className="text-lg md:text-xl text-white/60 max-w-xl leading-relaxed">
-                        {service.description}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-2 h-fit">
-                        {service.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold text-white/40 uppercase tracking-widest"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                        <div className="w-full md:w-auto md:ml-2">
-                          <TransitionLink
-                            href={`/services/${service.slug}`}
-                            label={service.title}
-                            className="inline-flex w-full md:w-auto"
-                          >
-                            <span className="inline-flex w-full md:w-auto items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)] transition-all duration-300 overflow-hidden group/btn">
-                              <span className="relative">Перейти на услугу</span>
-                              <span className="relative w-2.5 h-2.5 rounded-full bg-black shrink-0 transition-transform duration-300 group-hover/btn:scale-125" aria-hidden />
+                    <div className="pb-10 md:pb-16 pl-10 sm:pl-14 lg:pl-[75px] flex flex-col gap-8">
+                        <p className="text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed">
+                          {service.description}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-2">
+                          {service.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold text-white/40 uppercase tracking-widest"
+                            >
+                              {tag}
                             </span>
-                          </TransitionLink>
+                          ))}
                         </div>
-                      </div>
+                        <TransitionLink
+                          href={`/services/${service.slug}`}
+                          label={service.title}
+                          className="inline-flex w-full sm:w-auto"
+                        >
+                          <span className="inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)] transition-all duration-300 overflow-hidden group/btn">
+                            <span className="relative">Перейти на услугу</span>
+                            <span className="relative w-2.5 h-2.5 rounded-full bg-black shrink-0 transition-transform duration-300 group-hover/btn:scale-125" aria-hidden />
+                          </span>
+                        </TransitionLink>
                     </div>
                   </div>
                 </div>
@@ -205,8 +203,8 @@ export function ServicesSection() {
             })}
           </div>
 
-          {/* CTA */}
-          <div className="mt-16 flex justify-center sm:justify-start">
+          {/* CTA — вниз, отступ слева как у контента */}
+          <div className="mt-20 md:mt-24 pl-4 sm:pl-6 lg:pl-[70px] flex justify-center sm:justify-start">
             <ButtonPill href="/contact" variant="lime">
               Запустить систему
             </ButtonPill>

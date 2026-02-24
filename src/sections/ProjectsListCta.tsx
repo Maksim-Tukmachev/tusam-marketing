@@ -26,7 +26,7 @@ export function ProjectsListCta() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} className="px-4 md:px-9 py-16 md:py-24">
+    <section ref={ref} className="relative z-20 px-4 md:px-9 py-16 md:py-24 bg-white">
       <div className="max-w-[1520px] mx-auto">
         <div className="projects-cta-inner rounded-[24px] sm:rounded-[40px] bg-[#0a0a0a] p-6 sm:p-10 md:p-16 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bcff00] rounded-full blur-[120px] opacity-20" />

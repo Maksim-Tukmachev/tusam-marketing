@@ -57,18 +57,11 @@ export function ShowreelSection() {
 
 function StepCard({ step, index }: { step: any; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const handRef = useRef<SVGPathElement>(null);
+  const clockCircleRef = useRef<SVGCircleElement>(null);
   const dotsRef = useRef<HTMLDivElement[]>([]);
   const { contextSafe } = useGSAP({ scope: cardRef });
 
   const onEnter = contextSafe(() => {
-    gsap.to(handRef.current, {
-      rotation: "+=360",
-      duration: 1.5,
-      repeat: -1,
-      ease: "none",
-      id: `clockRotation-${index}`
-    });
     const card = cardRef.current;
     const textContent = card?.querySelectorAll(".text-content");
     const bgNumber = card?.querySelector(".bg-number");
@@ -81,12 +74,35 @@ function StepCard({ step, index }: { step: any; index: number }) {
         duration: 0.3
       }, 0);
     if (textContent?.length) tl.to(textContent, { color: "#ffffff", duration: 0.3 }, 0);
-    if (bgNumber) tl.to(bgNumber, { opacity: 0.12, duration: 0.4 }, 0);
+    if (bgNumber) tl.to(bgNumber, { color: "#ffffff", opacity: 0.45, duration: 0.4 }, 0);
+    if (clockCircleRef.current) {
+      gsap.to(clockCircleRef.current, {
+        fill: "#bcff00",
+        duration: 0.3,
+        ease: "power2.out"
+      });
+      gsap.to(clockCircleRef.current, {
+        scale: 1.12,
+        duration: 0.9,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        transformOrigin: "12px 12px",
+        id: `clockBreathe-${index}`
+      });
+    }
   });
 
   const onLeave = contextSafe(() => {
-    gsap.getById(`clockRotation-${index}`)?.kill();
-    gsap.to(handRef.current, { rotation: 0, duration: 0.5, ease: "power2.out" });
+    gsap.getById(`clockBreathe-${index}`)?.kill();
+    if (clockCircleRef.current) {
+      gsap.to(clockCircleRef.current, {
+        fill: "transparent",
+        scale: 1,
+        duration: 0.4,
+        transformOrigin: "12px 12px"
+      });
+    }
     gsap.getById(`hoverEffect-${index}`)?.kill();
     const card = cardRef.current;
     const textContent = card?.querySelectorAll(".text-content");
@@ -98,7 +114,7 @@ function StepCard({ step, index }: { step: any; index: number }) {
       duration: 0.3
     });
     if (textContent?.length) gsap.to(textContent, { color: (i: number) => i === 0 ? "#000000" : "#747474", duration: 0.3 });
-    if (bgNumber) gsap.to(bgNumber, { opacity: 0.02, duration: 0.4 });
+    if (bgNumber) gsap.to(bgNumber, { color: "#000000", opacity: 0.02, duration: 0.4 });
   });
 
   return (
@@ -138,16 +154,14 @@ function StepCard({ step, index }: { step: any; index: number }) {
         <div className="flex items-center gap-3">
           <div className="clock-wrapper relative w-5 h-5">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#bcff00] w-full h-full">
-              <circle cx="12" cy="12" r="9" className="opacity-20 stroke-current" />
-              <path ref={handRef} d="M12 7v5l2 2" className="origin-[12px_12px] stroke-current" strokeLinecap="round" />
+              <circle ref={clockCircleRef} cx="12" cy="12" r="9" className="opacity-20 stroke-current" fill="transparent" />
+              <path d="M12 7v5l2 2" className="origin-[12px_12px] stroke-current" strokeLinecap="round" />
             </svg>
           </div>
           <span className="text-content text-sm font-bold tracking-tight text-[#747474]">
             {step.duration}
           </span>
         </div>
-
-        <div className="w-2.5 h-2.5 rounded-full border border-black/10 bg-black/5 group-hover:bg-[#bcff00] group-hover:border-[#bcff00] group-hover:shadow-[0_0_12px_#bcff00] transition-all duration-300" />
       </div>
 
       <span className="bg-number absolute -bottom-4 -right-2 text-[80px] sm:text-[120px] font-bold text-black opacity-[0.02] leading-none pointer-events-none transition-none">

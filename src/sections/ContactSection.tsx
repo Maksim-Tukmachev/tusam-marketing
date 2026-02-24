@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -76,60 +75,11 @@ export function ContactSection() {
                   <div className="text-white/20 font-mono text-xs">tusam group</div>
                 </div>
 
-                <div className="mt-14 sm:mt-24">
-                  <h3 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter leading-none">
-                    Оставьте номер — <br /> <span className="text-[#bcff00]">перезвоним</span> <br /> за 15 минут.
+                <div className="mt-auto">
+                  <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter leading-tight">
+                    Оставьте номер — <span className="text-[#bcff00]">перезвоним</span> за 15 минут.
                   </h3>
                 </div>
-
-                <div className="mt-auto">
-  <div className="bg-white rounded-[24px] sm:rounded-[40px] p-5 sm:p-6 md:p-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-10 shadow-2xl transition-all duration-500 border border-white/10">
-    
-    {/* Картинка (оставили как просил) */}
-    <div className="w-full h-44 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-[16px] sm:rounded-[24px] overflow-hidden relative shrink-0">
-      <Image
-        src={"/images/image.webp"}
-        alt="Аудит"
-        fill
-        className="object-cover"
-      />
-    </div>
-
-    <div className="flex-1">
-      {/* Верхний тег с пульсирующей точкой */}
-      <div className="flex items-center gap-2 mb-2">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-        </span>
-        <span className="text-[10px] font-bold uppercase tracking-widest text-black/40">
-          Что вы получите в итоге
-        </span>
-      </div>
-
-      {/* Текст: теперь это не призыв нажать, а обещание результата */}
-      <h4 className="text-xl sm:text-2xl font-bold text-[#0a0a0a] tracking-tight mb-3">
-        Пошаговый план кратного <br className="hidden md:block" /> роста и разбор слабых мест
-      </h4>
-
-      {/* Список преимуществ вместо кнопки */}
-      <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-[11px] font-bold uppercase tracking-wider text-black/60">
-        <div className="flex items-center gap-2">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-[#bcff00]">
-            <path d="M10 3L4.5 8.5L2 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Прогноз по заявкам за 24 часа
-        </div>
-        <div className="flex items-center gap-2">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="text-[#bcff00]">
-            <path d="M10 3L4.5 8.5L2 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          Анализ конкурентов
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
               </div>
             </div>
           </div>

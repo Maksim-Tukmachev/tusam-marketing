@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/sections/HeroSection";
 import { ClientsSection } from "@/sections/ClientsSection";
 import { AdvantagesSection } from "@/sections/AdvantagesSection";
+import { AuditCtaSection } from "@/sections/AuditCtaSection";
 import { ServicesSection } from "@/sections/ServicesSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { ShowreelSection } from "@/sections/ShowreelSection";
@@ -43,7 +44,7 @@ function HomeJsonLd() {
     url: SITE_URL,
     description:
       "Система лидогенерации под ключ: конверсионный сайт, Яндекс Директ, CRM, автоворонки. Заявки от 49 ₽. Окупаемость за 14 дней.",
-    priceRange: "от 90 000 ₽",
+    priceRange: "от 60 000 ₽",
     areaServed: "Россия",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -95,6 +96,7 @@ export default function Home() {
         <HeroSection />
         <ClientsSection />
         <AdvantagesSection />
+        <AuditCtaSection />
         <ServicesSection />
         <ProjectsSection />
         <ShowreelSection />
