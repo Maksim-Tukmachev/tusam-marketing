@@ -5,17 +5,18 @@ import { ServicesPageHero } from "@/sections/ServicesPageHero";
 import { ServicesPageList } from "@/sections/ServicesPageList";
 import { ServicesPagePackages } from "@/sections/ServicesPagePackages";
 import { ServicesPageCta } from "@/sections/ServicesPageCta";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Услуги и цены | Система лидогенерации под ключ от 90 000 ₽",
   description:
     "Сайт + Яндекс Директ + CRM + автоворонки. Готовые пакеты: Быстрый старт 90 000 ₽, Рост x2 — 112 000 ₽, Под ключ — 290 000 ₽. Окупаемость за 2 недели.",
-  alternates: { canonical: "https://tusam.group/services" },
+  alternates: { canonical: `${SITE_URL}/services` },
   openGraph: {
     title: "Услуги и цены | Заявки под ключ от 90 000 ₽",
     description:
       "Сайт → Трафик → CRM → Автоматизация. Один подрядчик. Пакеты от 90 000 ₽.",
-    url: "https://tusam.group/services",
+    url: `${SITE_URL}/services`,
     type: "website",
   },
 };
@@ -28,7 +29,7 @@ function ServicesJsonLd() {
     provider: {
       "@type": "Organization",
       name: "Tusam Group",
-      url: "https://tusam.group",
+      url: SITE_URL,
     },
     description:
       "Конверсионный сайт, Яндекс Директ, CRM-система, автоворонки. Первые заявки за 14 дней.",

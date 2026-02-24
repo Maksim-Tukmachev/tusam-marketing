@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ProjectCaseContent } from "@/components/projects/ProjectCaseContent";
-import { PROJECTS } from "@/lib/constants";
+import { PROJECTS, SITE_URL } from "@/lib/constants";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     project.excerpt ??
     `${project.name} — ${project.sector}. ${project.categories.join(", ")}.`;
   const title = `${project.name} | Кейс Tusam Group`;
-  const url = `https://tusam.group/projects/${slug}`;
+  const url = `${SITE_URL}/projects/${slug}`;
   return {
     title,
     description,
@@ -63,19 +63,19 @@ export default async function ProjectPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Главная",
-        item: "https://tusam.group",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Кейсы",
-        item: "https://tusam.group/projects",
+        item: `${SITE_URL}/projects`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: project.name,
-        item: `https://tusam.group/projects/${slug}`,
+        item: `${SITE_URL}/projects/${slug}`,
       },
     ],
   };

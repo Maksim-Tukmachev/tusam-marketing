@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { BLOG_POSTS } from "@/lib/constants";
+import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
 import { ContactSection } from "@/sections/ContactSection";
 import { BlogPostList } from "./BlogPostList";
 
@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Блог | Практика лидогенерации: связки, цифры, результаты",
   description:
     "Без теории. Как снизить стоимость заявки в 4 раза, настроить Яндекс Директ и не слить бюджет, внедрить CRM и перестать терять лиды.",
-  alternates: { canonical: "https://tusam.group/blog" },
+  alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {
     title: "Блог Tusam Group | Практика лидогенерации",
     description:
       "Связки, настройки, цифры. Только то, что приносит деньги. Снижаем стоимость заявки в 4 раза.",
-    url: "https://tusam.group/blog",
+    url: `${SITE_URL}/blog`,
     type: "website",
   },
 };

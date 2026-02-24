@@ -10,23 +10,23 @@ import { ShowreelSection } from "@/sections/ShowreelSection";
 import { BlogSection } from "@/sections/BlogSection";
 import { FaqSection } from "@/sections/FaqSection";
 import { ContactSection } from "@/sections/ContactSection";
-import { FAQ_ITEMS } from "@/lib/constants";
+import { FAQ_ITEMS, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Tusam Group | Система лидогенерации под ключ — от 49 ₽ за заявку",
   description:
     "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 14 дней. Бесплатный аудит за 24 часа.",
   alternates: {
-    canonical: "https://tusamgroup.ru",
+    canonical: SITE_URL,
   },
   openGraph: {
     title: "Tusam Group | Заявки от 49 ₽. Система под ключ.",
     description: "...",
-    url: "https://tusamgroup.ru",
+    url: SITE_URL,
     type: "website",
     images: [
       {
-        url: "https://tusam-marketing.vercel.app/og-image.png",
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Tusam Group — система лидогенерации",
@@ -40,7 +40,7 @@ function HomeJsonLd() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Tusam Group",
-    url: "https://tusam.group",
+    url: SITE_URL,
     description:
       "Система лидогенерации под ключ: конверсионный сайт, Яндекс Директ, CRM, автоворонки. Заявки от 49 ₽. Окупаемость за 14 дней.",
     priceRange: "от 90 000 ₽",

@@ -4,6 +4,7 @@ import { TransitionProvider } from "@/components/transition/TransitionContext";
 import { TransitionOverlay } from "@/components/transition/TransitionOverlay";
 import { Preloader } from "@/components/transition/Preloader";
 import { CookieConsent } from "@/components/ui/CookieConsent";
+import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,7 +13,6 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const SITE_URL = "https://tusam-marketing.vercel.app";
 const SITE_NAME = "Tusam Group";
 
 export const viewport: Viewport = {

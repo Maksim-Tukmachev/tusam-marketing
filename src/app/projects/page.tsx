@@ -5,17 +5,18 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { ProjectsListSection } from "@/sections/ProjectsListSection";
 import { ProjectsListCta } from "@/sections/ProjectsListCta";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Кейсы | Результаты клиентов: ROI 340%, заявка от 490 ₽",
   description:
     "Кейсы лидогенерации: мебель, рекрутинг, eCommerce, недвижимость. 53+ заявки в месяц, окупаемость за 11 дней, стоимость лида от 490 ₽.",
-  alternates: { canonical: "https://tusam.group/projects" },
+  alternates: { canonical: `${SITE_URL}/projects` },
   openGraph: {
     title: "Кейсы | ROI 340%. Заявка от 490 ₽.",
     description:
       "Реальные цифры: мебель, рекрутинг, eCommerce, недвижимость. 53+ заявки в месяц за 11 дней.",
-    url: "https://tusam.group/projects",
+    url: `${SITE_URL}/projects`,
     type: "website",
   },
 };

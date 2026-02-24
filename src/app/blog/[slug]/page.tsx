@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { TransitionLink } from "@/components/transition/TransitionLink";
-import { BLOG_POSTS } from "@/lib/constants";
+import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return { title: "Запись не найдена" };
   const description = post.metaDescription ?? post.excerpt;
   const title = `${post.title} | Блог Tusam Group`;
-  const url = `https://tusam.group/blog/${slug}`;
+  const url = `${SITE_URL}/blog/${slug}`;
   return {
     title,
     description,
@@ -69,16 +69,16 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Organization",
       name: "Tusam Group",
-      url: "https://tusam.group",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: "Tusam Group",
-      url: "https://tusam.group",
+      url: SITE_URL,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://tusam.group/blog/${slug}`,
+      "@id": `${SITE_URL}/blog/${slug}`,
     },
   };
 
@@ -90,19 +90,19 @@ export default async function BlogPostPage({ params }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Главная",
-        item: "https://tusam.group",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Блог",
-        item: "https://tusam.group/blog",
+        item: `${SITE_URL}/blog`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://tusam.group/blog/${slug}`,
+        item: `${SITE_URL}/blog/${slug}`,
       },
     ],
   };

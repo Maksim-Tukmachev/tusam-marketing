@@ -14,7 +14,7 @@ export const CONTACT_EMAIL = "director@tusamgroup.ru";
 export const CONTACT_PHONE = "8 (986) 723-18-84";
 export const CONTACT_PHONE_HREF = "tel:+79867231884";
 
-export const SITE_URL = "https://tusam.group";
+export const SITE_URL = "https://tusamgroup.ru";
 
 export { SERVICES } from "@/data/services";
 
