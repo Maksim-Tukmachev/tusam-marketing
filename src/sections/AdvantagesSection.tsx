@@ -63,7 +63,7 @@ export const CASE_SLIDES = [
     ],
   },
 ] as const;
-const AUTOPLAY_MS = 8500;
+const AUTOPLAY_MS = 12500;
 
 export function AdvantagesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -140,7 +140,7 @@ export function AdvantagesSection() {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-          <div className="lg:col-span-4 list-panel">
+          <div className="order-2 lg:order-1 lg:col-span-4 list-panel">
             <div className="h-full rounded-[16px] sm:rounded-[24px] bg-[#f5f5f5] border border-black/5 p-3 sm:p-5">
               <div className="relative flex flex-col gap-1.5 sm:gap-2">
                 <div className="absolute left-[15px] top-2 bottom-2 w-px bg-black/10 hidden sm:block" />
@@ -186,7 +186,7 @@ export function AdvantagesSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-8 slider-panel">
+          <div className="order-1 lg:order-2 lg:col-span-8 slider-panel">
             <div
               className="relative h-full rounded-[16px] sm:rounded-[24px] bg-[#f5f5f5] border border-black/5 p-3 sm:p-5 lg:p-8 overflow-hidden"
             >
@@ -237,9 +237,9 @@ export function AdvantagesSection() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
-                    <div className="md:col-span-5">
-                      <div className="relative aspect-[16/10] sm:aspect-[4/3] rounded-[12px] sm:rounded-[18px] overflow-hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 items-stretch">
+                    <div className="md:col-span-5 min-h-0 flex">
+                      <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] md:aspect-auto md:h-full rounded-[12px] sm:rounded-[18px] overflow-hidden">
                         <Image
                           src={CASE_SLIDES[activeSlide].image}
                           alt={CASE_SLIDES[activeSlide].imageAlt}

@@ -55,7 +55,7 @@ export function ShowreelSection() {
   );
 }
 
-function StepCard({ step, index }: { step: any, index: number }) {
+function StepCard({ step, index }: { step: any; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const handRef = useRef<SVGPathElement>(null);
   const dotsRef = useRef<HTMLDivElement[]>([]);
@@ -69,7 +69,6 @@ function StepCard({ step, index }: { step: any, index: number }) {
       ease: "none",
       id: `clockRotation-${index}`
     });
-
     const card = cardRef.current;
     const textContent = card?.querySelectorAll(".text-content");
     const bgNumber = card?.querySelector(".bg-number");
@@ -88,7 +87,6 @@ function StepCard({ step, index }: { step: any, index: number }) {
   const onLeave = contextSafe(() => {
     gsap.getById(`clockRotation-${index}`)?.kill();
     gsap.to(handRef.current, { rotation: 0, duration: 0.5, ease: "power2.out" });
-
     gsap.getById(`hoverEffect-${index}`)?.kill();
     const card = cardRef.current;
     const textContent = card?.querySelectorAll(".text-content");

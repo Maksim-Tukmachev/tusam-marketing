@@ -102,6 +102,7 @@ export function ServicesSection() {
             src={SERVICES_BG_IMAGE}
             alt=""
             fill
+            priority
             className="services-bg object-cover object-center brightness-[0.7] scale-110"
           />
           <GrainOverlay />
@@ -136,12 +137,12 @@ export function ServicesSection() {
                   className="service-item border-b border-white/10 group cursor-pointer"
                   onClick={() => toggleService(index)}
                 >
-                  <div className="flex items-center justify-between py-8 md:py-10">
-                    <div className="flex items-center gap-4 sm:gap-6 md:gap-12">
-                      <span className={`text-sm font-bold font-mono transition-colors duration-500 ${isActive ? "text-[#bcff00]" : "text-white/30"}`}>
+                  <div className="flex items-center justify-between gap-3 sm:gap-4 py-8 md:py-10">
+                    <div className="flex items-center gap-4 sm:gap-6 md:gap-12 min-w-0 flex-1">
+                      <span className={`text-sm font-bold font-mono shrink-0 transition-colors duration-500 ${isActive ? "text-[#bcff00]" : "text-white/30"}`}>
                         0{index + 1}
                       </span>
-                      <h3 className={`text-2xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.04em] transition-all duration-500 ${isActive ? "text-white translate-x-2" : "text-white/40 group-hover:text-white/70"}`}>
+                      <h3 className={`text-2xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.04em] transition-all duration-500 break-words min-w-0 ${isActive ? "text-white translate-x-2" : "text-white/40 group-hover:text-white/70"}`}>
                         {service.title}
                       </h3>
                     </div>
@@ -184,16 +185,18 @@ export function ServicesSection() {
                             {tag}
                           </span>
                         ))}
-                        <TransitionLink
-                          href={`/services/${service.slug}`}
-                          label={service.title}
-                          className="inline-flex ml-0 md:ml-2"
-                        >
-                          <span className="inline-flex items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)] transition-all duration-300 overflow-hidden group/btn">
-                            <span className="relative">Перейти на услугу</span>
-                            <span className="relative w-2.5 h-2.5 rounded-full bg-black shrink-0 transition-transform duration-300 group-hover/btn:scale-125" aria-hidden />
-                          </span>
-                        </TransitionLink>
+                        <div className="w-full md:w-auto md:ml-2">
+                          <TransitionLink
+                            href={`/services/${service.slug}`}
+                            label={service.title}
+                            className="inline-flex w-full md:w-auto"
+                          >
+                            <span className="inline-flex w-full md:w-auto items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)] transition-all duration-300 overflow-hidden group/btn">
+                              <span className="relative">Перейти на услугу</span>
+                              <span className="relative w-2.5 h-2.5 rounded-full bg-black shrink-0 transition-transform duration-300 group-hover/btn:scale-125" aria-hidden />
+                            </span>
+                          </TransitionLink>
+                        </div>
                       </div>
                     </div>
                   </div>

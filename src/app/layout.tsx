@@ -5,6 +5,7 @@ import { TransitionOverlay } from "@/components/transition/TransitionOverlay";
 import { Preloader } from "@/components/transition/Preloader";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { SITE_URL } from "@/lib/constants";
+import { SITE_KEYWORDS } from "@/data/keywords";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,24 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 2 недели. Бесплатный аудит за 24 часа.",
-  keywords: [
-    "лидогенерация",
-    "заявки под ключ",
-    "Яндекс Директ",
-    "CRM",
-    "автоворонки",
-    "маркетинговое агентство",
-    "лиды для бизнеса",
-    "настройка рекламы",
-    "конверсионный сайт",
-    "Tusam Group",
-    "tusam",
-    "увеличить продажи",
-    "стоимость заявки",
-    "ROI 300%",
-    "генерация лидов",
-    "маркетинг под ключ",
-  ],
+  keywords: [...SITE_KEYWORDS],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,

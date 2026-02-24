@@ -107,8 +107,8 @@ export function Footer({ variant = "default" }: FooterProps) {
               </p>
               <h2 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[100px] font-bold tracking-[-0.06em] leading-[0.9] text-white">
                 Давайте<br />
-                работать{" "}
-                <span className="text-[#bcff00]">вместе.</span>
+                вместе{" "}
+                <span className="text-[#bcff00]">зарабатывать.</span>
               </h2>
             </div>
 
@@ -139,73 +139,60 @@ export function Footer({ variant = "default" }: FooterProps) {
           </div>
 
           {/* ── Navigation ── */}
-          {/* Убрали лишние блоки, оставили только чистую навигацию с шикарными отступами */}
-          <div className="footer-nav grid grid-cols-2 sm:grid-cols-3 lg:flex lg:gap-32 gap-8 sm:gap-10 border-t border-white/[0.06] pt-10 sm:pt-12">
-            {FOOTER_NAV.map((group) => (
-              <div key={group.title} className="flex flex-col gap-5 sm:gap-6 min-w-[140px]">
-                <span className="text-[10px] font-bold text-white/25 uppercase tracking-[0.25em]">
-                  {group.title}
-                </span>
-                <ul className="flex flex-col gap-3">
-                  {group.links.map((link) =>
-                    link.external ? (
-                      <li key={link.label}>
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm sm:text-base font-medium text-white/60 hover:text-[#bcff00] transition-colors duration-300"
-                        >
-                          {link.label}
-                        </a>
-                      </li>
-                    ) : (
-                      <li key={link.label}>
-                        <TransitionLink
-                          href={link.href}
-                          label={link.label}
-                          className="text-sm sm:text-base font-medium text-white/60 hover:text-[#bcff00] transition-colors duration-300"
-                        >
-                          {link.label}
-                        </TransitionLink>
-                      </li>
-                    )
-                  )}
-                </ul>
+          <div className="footer-nav flex flex-wrap items-start justify-between gap-8 sm:gap-10 border-t border-white/[0.06] pt-10 sm:pt-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:gap-32 gap-8 sm:gap-10">
+              {FOOTER_NAV.map((group) => (
+                <div key={group.title} className="flex flex-col gap-5 sm:gap-6 min-w-[140px]">
+                  <span className="text-[10px] font-bold text-white/25 uppercase tracking-[0.25em]">
+                    {group.title}
+                  </span>
+                  <ul className="flex flex-col gap-3">
+                    {group.links.map((link) =>
+                      link.external ? (
+                        <li key={link.label}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm sm:text-base font-medium text-white/60 hover:text-[#bcff00] transition-colors duration-300"
+                          >
+                            {link.label}
+                          </a>
+                        </li>
+                      ) : (
+                        <li key={link.label}>
+                          <TransitionLink
+                            href={link.href}
+                            label={link.label}
+                            className="text-sm sm:text-base font-medium text-white/60 hover:text-[#bcff00] transition-colors duration-300"
+                          >
+                            {link.label}
+                          </TransitionLink>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={scrollToTop}
+              className="group flex flex-col items-center gap-2 shrink-0 self-center lg:self-start"
+              aria-label="Наверх"
+            >
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#bcff00] group-hover:bg-[#bcff00] transition-all duration-300">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white/40 group-hover:text-black transition-colors duration-300 rotate-180">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
-            ))}
+              <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/20 group-hover:text-white/60 transition-colors hidden sm:block">
+                Наверх
+              </span>
+            </button>
           </div>
 
           {/* ── Bottom Bar ── */}
-          <div className="footer-bottom flex flex-col gap-6 sm:gap-8 mt-4">
-            {/* Giant logotype + back to top */}
-            <div className="flex items-end justify-between border-b border-white/[0.06] pb-5 sm:pb-8">
-              <div className="flex items-baseline gap-1">
-                {"TUSAM".split("").map((char, i) => (
-                  <span
-                    key={i}
-                    className="text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[140px] font-bold tracking-[-0.06em] leading-none text-white/[0.03] select-none"
-                  >
-                    {char}
-                  </span>
-                ))}
-              </div>
-              <button
-                onClick={scrollToTop}
-                className="group flex flex-col items-center gap-2 mb-2 sm:mb-4 shrink-0"
-                aria-label="Наверх"
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#bcff00] group-hover:bg-[#bcff00] transition-all duration-300">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white/40 group-hover:text-black transition-colors duration-300 rotate-180">
-                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/20 group-hover:text-white/60 transition-colors hidden sm:block">
-                  Наверх
-                </span>
-              </button>
-            </div>
-
+          <div className="footer-bottom flex flex-col gap-6 sm:gap-8 mt-4 border-t border-white/[0.06] pt-5 sm:pt-8">
             {/* Legal row */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-[10px] font-bold text-white/25 uppercase tracking-[0.15em]">
               <p>{COPYRIGHT}</p>

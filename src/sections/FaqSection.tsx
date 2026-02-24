@@ -86,79 +86,11 @@ export function FaqSection() {
             <p className="text-lg md:text-xl font-medium tracking-tight text-[#747474] max-w-sm md:text-right">
               Не нашли ответ? Напишите — перезвоним за 15 минут.
             </p>
-            <ButtonPill href="/contact" variant="black">
-              Написать
-            </ButtonPill>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
-        <div className="lg:col-span-5">
-            <Link
-              href="/contact"
-              className="faq-card group relative block h-full min-h-[320px] sm:min-h-[420px] lg:min-h-[520px] rounded-[32px] overflow-hidden flex flex-col justify-between p-6 sm:p-8 md:p-10"
-              aria-label="Остались вопросы? Перейти к форме заявки"
-            >
-              <Image
-                src={FAQ_HERO_IMAGE}
-                alt=""
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
-
-              <div className="relative z-10 flex justify-between items-start w-full">
-                <div className="relative w-28 h-8">
-                  <Image
-                    src={"/icons/white.svg"}
-                    alt=""
-                    fill
-                    className="object-contain object-left"
-                  />
-                </div>
-                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-md overflow-hidden">
-                  <Image
-                    src="https://framerusercontent.com/images/cyocIIxmfHraQKroedozYMmy7XQ.svg?width=320&height=320"
-                    alt=""
-                    width={48}
-                    height={48}
-                    className="object-cover scale-110 group-hover:rotate-12 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-
-              <div className="relative z-10 w-full flex flex-col items-end text-right mt-auto pt-20">
-                <p className="text-[10px] font-mono font-bold text-white/50 uppercase tracking-widest mb-4">
-                  Остались вопросы?
-                </p>
-                <p className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-[1.05] text-white mb-8">
-                  Напишите <br />
-                  <span className="text-[#bcff00] inline-block group-hover:-translate-y-2 transition-transform duration-500 ease-out">
-                    нам.
-                  </span>
-                </p>
-                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#bcff00] text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-white transition-all duration-500 ease-out">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-500"
-                  >
-                    <path
-                      d="M5 12H19M19 12L12 5M19 12L12 19"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="lg:col-span-7 flex flex-col gap-3">
+        {/* Вопросы — ответы на всю ширину */}
+        <div className="flex flex-col gap-3 mb-12 lg:mb-20">
             {FAQ_ITEMS.map((item) => {
               const isOpen = openId === item.id;
               return (
@@ -222,8 +154,72 @@ export function FaqSection() {
                 </article>
               );
             })}
-          </div>
         </div>
+
+        {/* CTA «Остались вопросы?» на всю ширину внизу */}
+        <Link
+          href="/contact"
+          className="faq-card group relative block w-full min-h-[140px] sm:min-h-[160px] md:min-h-[190px] rounded-[32px] overflow-hidden flex flex-col justify-between p-5 sm:p-6 md:p-8"
+          aria-label="Остались вопросы? Перейти к форме заявки"
+        >
+          <Image
+            src={FAQ_HERO_IMAGE}
+            alt=""
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20 opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+
+          <div className="relative z-10 flex justify-between items-start w-full">
+            <div className="relative w-28 h-8">
+              <Image
+                src={"/icons/white.svg"}
+                alt=""
+                fill
+                className="object-contain object-left"
+              />
+            </div>
+            <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-md overflow-hidden">
+              <Image
+                src="https://framerusercontent.com/images/cyocIIxmfHraQKroedozYMmy7XQ.svg?width=320&height=320"
+                alt=""
+                width={48}
+                height={48}
+                className="object-cover scale-110 group-hover:rotate-12 transition-transform duration-500"
+              />
+            </div>
+          </div>
+
+          <div className="relative z-10 w-full flex flex-col items-start text-left mt-auto pt-6 sm:pt-8">
+            <p className="text-[10px] font-mono font-bold text-white/70 uppercase tracking-widest mb-2">
+              Остались вопросы?
+            </p>
+            <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter leading-[1.05] text-white mb-4">
+              Напишите <br />
+              <span className="text-[#bcff00] inline-block group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+                нам.
+              </span>
+            </p>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#bcff00] text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-white transition-all duration-500 ease-out">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="transform -rotate-45 group-hover:rotate-0 transition-transform duration-500"
+              >
+                <path
+                  d="M5 12H19M19 12L12 5M19 12L12 19"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </Link>
       </div>
     </section>
   );
