@@ -5,7 +5,7 @@ import { TransitionOverlay } from "@/components/transition/TransitionOverlay";
 import { Preloader } from "@/components/transition/Preloader";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import { SITE_URL } from "@/lib/constants";
-import { SITE_KEYWORDS } from "@/data/keywords";
+import { ROOT_KEYWORDS } from "@/data/keywords";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     template: "%s | Tusam Group",
   },
   description:
-    "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 2 недели. Бесплатный аудит за 24 часа.",
-  keywords: [...SITE_KEYWORDS],
+    "Сайт + Яндекс Директ + CRM + автоворонки. Окупаемость за 3 недели. Бесплатный аудит за 24 часа.",
+  keywords: [...ROOT_KEYWORDS],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,

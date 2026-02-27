@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { TransitionLink } from "@/components/transition/TransitionLink";
+import { getKeywordsForClusters } from "@/data/keywords";
 import { SERVICES } from "@/data/services";
 import { SITE_URL, CONTACT_EMAIL } from "@/lib/constants";
 import type { ServiceItem } from "@/lib/types";
@@ -16,6 +17,15 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
+
+/** slug → номера кластеров (1-based) для meta keywords */
+const SERVICE_CLUSTERS: Record<string, number[]> = {
+  "razrabotka-konversionnogo-sayta": [7],
+  "yandex-direkt-vk-ads": [4, 5],
+  "crm-avtovoronki": [8],
+  "snizhenie-stoimosti-zayavki": [9],
+  "masshtabirovanie-bez-sliva-byudzheta": [9],
+};
 
 function getService(slug: string): ServiceItem | undefined {
   return SERVICES.find((s) => s.slug === slug);
@@ -46,11 +56,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     DESCRIPTION_MAX
   );
   const url = `${SITE_URL}/services/${slug}`;
+  const clusterIndices = SERVICE_CLUSTERS[slug] ?? [];
+  const keywords = clusterIndices.length
+    ? getKeywordsForClusters(clusterIndices)
+    : undefined;
 
   return {
     title,
     description,
-    keywords: service.seo?.keywords?.join(", "),
+    ...(keywords?.length && { keywords }),
     alternates: { canonical: url },
     openGraph: {
       title,

@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ButtonPill } from "@/components/ui/ButtonPill";
 import { TransitionLink } from "@/components/transition/TransitionLink";
+import { getKeywordsForClusters } from "@/data/keywords";
 import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    keywords: getKeywordsForClusters([11, 12]),
     alternates: { canonical: url },
     openGraph: {
       title,

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ProjectCaseContent } from "@/components/projects/ProjectCaseContent";
+import { getKeywordsForClusters } from "@/data/keywords";
 import { PROJECTS, SITE_URL } from "@/lib/constants";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -20,9 +21,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     `${project.name} — ${project.sector}. ${project.categories.join(", ")}.`;
   const title = `${project.name} | Кейс Tusam Group`;
   const url = `${SITE_URL}/projects/${slug}`;
+  const clusterIndices =
+    project.sector === "Строительство" || project.sector === "Ремонт"
+      ? [13, 1]
+      : [1];
+  const keywords = getKeywordsForClusters(clusterIndices);
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: url },
     openGraph: {
       title,

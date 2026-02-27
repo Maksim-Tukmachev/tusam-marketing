@@ -346,3 +346,22 @@ export const SEMANTIC_CORE: KeywordCluster[] = [
 
 /** Плоский список всех ключевых слов из кластеров для meta keywords */
 export const SITE_KEYWORDS: string[] = SEMANTIC_CORE.flatMap((c) => c.keywords);
+
+/** Ключевые слова для root layout: бренд (Кластер 1) + общие запросы */
+export const ROOT_KEYWORDS: string[] = [
+  ...SEMANTIC_CORE[0].keywords,
+  "маркетинговое агентство",
+  "лидогенерация",
+];
+
+/** Возвращает объединённый массив ключевых слов по номерам кластеров (1-based). Без дубликатов. */
+export function getKeywordsForClusters(clusterIndices: number[]): string[] {
+  const set = new Set<string>();
+  for (const oneBased of clusterIndices) {
+    const index = oneBased - 1;
+    if (index >= 0 && index < SEMANTIC_CORE.length) {
+      for (const kw of SEMANTIC_CORE[index].keywords) set.add(kw);
+    }
+  }
+  return Array.from(set);
+}
