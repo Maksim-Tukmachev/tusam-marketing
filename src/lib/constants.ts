@@ -19,16 +19,16 @@ export const SITE_URL = "https://tusamgroup.ru";
 export { SERVICES } from "@/data/services";
 
 export const CLIENTS: ClientLogo[] = [
-  { name: "Client 1", logoUrl: '' },
-  { name: "Client 2", logoUrl: '' },
-  { name: "Client 3", logoUrl: '' },
-  { name: "Client 4", logoUrl: '' },
-  { name: "Client 5", logoUrl: '' },
-  { name: "Client 6", logoUrl: '' },
-  { name: "Client 7", logoUrl: '' },
-  { name: "Client 8", logoUrl: '' },
-  { name: "Client 9", logoUrl: '' },
-  { name: "Client 10", logoUrl: '' },
+  { name: "Sky", logoUrl: "/company/premium-real-estate-logo-for-a-company-called--sky%202.svg" },
+  { name: "Group 13", logoUrl: "/company/Group%2013.svg" },
+  { name: "Vi Clinic", logoUrl: "/company/clean-medical-logo-for-a-private-clinic-called--vi%201.svg" },
+  { name: "Geomet", logoUrl: "/company/minimalist-logo-for-a-construction-company--geomet%201.svg" },
+  { name: "Horizon", logoUrl: "/company/fresh-modern-logo-for-a-travel-company-called--hor%201%20%281%29.svg" },
+  { name: "Fitness", logoUrl: "/company/minimal-modern-fitness-logo-for-a-gym-brand-called%201%20%281%29.svg" },
+  { name: "Tech", logoUrl: "/company/futuristic-tech-logo-for-a-saas-platform-called--d%201%20%281%29.svg" },
+  { name: "Luma", logoUrl: "/company/elegant-logo-for-a-modern-restaurant-called--luma-%201.svg" },
+  { name: "Group", logoUrl: "/company/Group%201000011019.svg" },
+  { name: "Group", logoUrl: "/company/Frame (1).svg" },
 ];
 
 export const SERVICE_PACKAGES: ServicePackage[] = [
