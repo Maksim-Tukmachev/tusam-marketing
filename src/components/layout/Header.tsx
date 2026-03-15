@@ -187,7 +187,7 @@ export function Header() {
               </div>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://t.me/tusam"
+                  href="https://t.me/deputatisch"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#b2ff00] hover:text-black transition-colors"
@@ -198,7 +198,7 @@ export function Header() {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/79001234567"
+                  href="https://wa.me/+79867231884"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#b2ff00] hover:text-black transition-colors"
@@ -209,7 +209,7 @@ export function Header() {
                   </svg>
                 </a>
                 <a
-                  href="https://max.im/tusam"
+                  href="https://max.ru/79867231884"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#b2ff00] hover:text-black transition-colors [&_img]:hover:invert"
