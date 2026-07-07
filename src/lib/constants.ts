@@ -20,7 +20,7 @@ export { SERVICES } from "@/data/services";
 
 export const CLIENTS: ClientLogo[] = [
   { name: "Sky", logoUrl: "/company/sky.svg" },
-  { name: "Group13", logoUrl: "/company/group13.svg" },
+  { name: "Group13", logoUrl: "company/frame.svg" },
   { name: "ViClinic", logoUrl: "/company/vi-clinic.svg" },
   { name: "Geomet", logoUrl: "/company/geomet.svg" },
   { name: "Horizon", logoUrl: "/company/horizon.svg" },

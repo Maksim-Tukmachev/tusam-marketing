@@ -65,10 +65,10 @@ export function HeroSection() {
 
           <div className="mb-5 sm:mb-6 md:mb-7 lg:mb-8">
             <h1 className="text-[11vw] sm:text-[10vw] md:text-[72px] lg:text-[100px] xl:text-[140px] font-semibold tracking-[-0.06em] leading-[1.06] md:leading-[0.92] text-white mb-3 sm:mb-5 md:mb-7 lg:mb-9">
-              Рост чистой прибыли на 15–40% в год <span className="text-[#b2ff00]">по методологии&nbsp;Доктора&nbsp;наук</span>
+              Рост чистой прибыли на  <span className="text-[#b2ff00]">15–40% в год</span>
             </h1>
             <p className="text-base sm:text-lg md:text-[24px] lg:text-[34px] xl:text-[42px] font-medium tracking-[-0.03em] text-white/90 mt-2 sm:mt-3 md:mt-4 max-w-2xl">
-              Без операционного хаоса, интуитивных решений и слива бюджетов. Разработаем стратегию и оцифруем бизнес-процессы за 30 дней.
+              Без интуитивных решений и слива бюджетов. Разработаем стратегию и оцифруем бизнес-процессы за 30 дней.
             </p>
           </div>
 
