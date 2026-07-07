@@ -23,7 +23,7 @@ export function ServicesPageList() {
               <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 sm:gap-6 md:gap-0 px-2 md:px-6">
                 {/* Left: number */}
                 <div className="md:w-24 shrink-0">
-                  <span className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter text-black/6 group-hover:text-[#b2ff00] transition-colors duration-500 leading-none select-none">
+                  <span className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter text-black/6 group-hover:text-[#1C5E3C] transition-colors duration-500 leading-none select-none">
                     {service.number}
                   </span>
                 </div>
@@ -60,7 +60,7 @@ export function ServicesPageList() {
                       </span>
                     </div>
                   )}
-                  <div className="w-12 h-12 rounded-full bg-[#f3f3f3] group-hover:bg-[#b2ff00] flex items-center justify-center shrink-0 transition-all duration-500">
+                  <div className="w-12 h-12 rounded-full bg-[#f3f3f3] group-hover:bg-[#1C5E3C] flex items-center justify-center shrink-0 transition-all duration-500">
                     <svg
                       width="18"
                       height="18"

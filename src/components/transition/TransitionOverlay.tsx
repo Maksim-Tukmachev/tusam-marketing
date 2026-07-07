@@ -27,7 +27,7 @@ export function TransitionOverlay() {
         >
           {/* Decorative line */}
           <motion.div
-            className="absolute top-0 left-0 right-0 h-[2px] bg-[#b2ff00]"
+            className="absolute top-0 left-0 right-0 h-[2px] bg-[#1C5E3C]"
             initial={{ scaleX: 0, transformOrigin: "left" }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.5, delay: 0.3, ease: [0.76, 0, 0.24, 1] }}
@@ -59,7 +59,7 @@ export function TransitionOverlay() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: 0.25 }}
-                className="w-8 h-8 border-2 border-[#b2ff00] border-t-transparent rounded-full animate-spin"
+                className="w-8 h-8 border-2 border-[#1C5E3C] border-t-transparent rounded-full animate-spin"
               />
             )}
           </div>
@@ -71,7 +71,7 @@ export function TransitionOverlay() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.3 }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#b2ff00] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1C5E3C] animate-pulse" />
             <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
             <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
           </motion.div>

@@ -52,7 +52,7 @@ export function Header() {
               <TransitionLink
                 href="#contact"
                 label="Оставить заявку"
-                className="hidden sm:inline-flex items-center justify-center gap-2 rounded-[50px] px-6 py-2.5 text-xs font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black hover:bg-[#9de600] transition-colors"
+                className="hidden sm:inline-flex items-center justify-center gap-2 rounded-[50px] px-6 py-2.5 text-xs font-semibold tracking-[-0.02em] leading-[100%] bg-[#1C5E3C] text-white hover:bg-[#164a2f] transition-colors"
               >
                 Оставить заявку
                 <span className="w-1.5 h-1.5 rounded-full bg-black shrink-0" aria-hidden />
@@ -142,7 +142,7 @@ export function Header() {
                   href="#contact"
                   label="Оставить заявку"
                   onClick={() => setMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-3 rounded-[50px] px-10 py-5 text-base font-semibold tracking-[-0.02em] bg-[#b2ff00] text-black hover:bg-[#9de600] transition-colors"
+                  className="inline-flex items-center justify-center gap-3 rounded-[50px] px-10 py-5 text-base font-semibold tracking-[-0.02em] bg-[#1C5E3C] text-white hover:bg-[#164a2f] transition-colors"
                 >
                   Оставить заявку
                   <span className="w-2 h-2 rounded-full bg-black shrink-0" aria-hidden />
@@ -160,7 +160,7 @@ export function Header() {
                 <div className="flex flex-col gap-1">
                   <span className="text-[#747474] text-sm font-medium">Напишите нам</span>
                   <div className="flex items-center gap-2 border-b border-[#090909] pb-1">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="bg-[#bcff00] rounded-full p-[2px]" aria-hidden>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="bg-[#1C5E3C] rounded-full p-[2px]" aria-hidden>
                       <path d="M4 10L10 4M10 4H5.5M10 4V8.5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <a
@@ -184,7 +184,7 @@ export function Header() {
               <div className="flex items-center gap-3">
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#b2ff00] hover:text-black transition-colors"
+                  className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#1C5E3C] hover:text-black transition-colors"
                   aria-label="Telegram"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -193,7 +193,7 @@ export function Header() {
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#b2ff00] hover:text-black transition-colors"
+                  className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#1C5E3C] hover:text-black transition-colors"
                   aria-label="WhatsApp"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -202,7 +202,7 @@ export function Header() {
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#b2ff00] hover:text-black transition-colors [&_img]:hover:invert"
+                  className="w-10 h-10 rounded-full bg-[#0a0a0a] flex items-center justify-center text-white hover:bg-[#1C5E3C] hover:text-black transition-colors [&_img]:hover:invert"
                   aria-label="Max"
                 >
                   <Image src="/icons/max.svg" alt="" width={18} height={18} className="w-[18px] h-[18px]" />

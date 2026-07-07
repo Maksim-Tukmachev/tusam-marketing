@@ -117,11 +117,11 @@ export function ContactPageHero() {
               className="contact-hero-card transform-gpu preserve-3d group relative rounded-[20px] sm:rounded-[32px] bg-[#f7f7f7] hover:bg-[#0a0a0a] p-5 sm:p-8 md:p-10 transition-colors duration-500 flex flex-col min-h-[260px] sm:min-h-[320px] cursor-pointer"
             >
               <div className="flex justify-between items-start mb-auto">
-                <span className="text-[10px] font-mono font-bold text-black/20 group-hover:text-[#bcff00] uppercase tracking-widest transition-colors">
+                <span className="text-[10px] font-mono font-bold text-black/20 group-hover:text-[#1C5E3C] uppercase tracking-widest transition-colors">
                   {item.label}
                 </span>
                 <div className="w-10 h-10 rounded-full border border-black/5 flex items-center justify-center group-hover:border-white/10 transition-colors">
-                   <div className="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-[#bcff00] transition-colors" />
+                   <div className="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-[#1C5E3C] transition-colors" />
                 </div>
               </div>
 

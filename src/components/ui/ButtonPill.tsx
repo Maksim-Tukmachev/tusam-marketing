@@ -31,9 +31,9 @@ export function ButtonPill({
     black:
       "bg-[#0a0a0a] text-white shadow-[0_2px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.3)]",
     lime:
-      "bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)]",
+      "bg-[#1C5E3C] text-white shadow-[0_2px_20px_rgba(28,94,60,0.25)] hover:shadow-[0_4px_30px_rgba(28,94,60,0.45)]",
   };
-  const circleClass = variant === "black" ? "bg-[#b2ff00]" : "bg-black";
+  const circleClass = variant === "black" ? "bg-[#1C5E3C]" : "bg-black";
   const shimmerClass =
     variant === "black"
       ? "bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"

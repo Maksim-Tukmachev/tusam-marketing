@@ -63,9 +63,9 @@ export function ContactForm() {
   if (submitState === "success") {
     return (
       <div className="bg-white rounded-[18px] p-6 text-center">
-        <div className="w-14 h-14 rounded-full bg-[#b2ff00] mx-auto mb-4 flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-[#1C5E3C] mx-auto mb-4 flex items-center justify-center">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M5 13L9 17L19 7" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 13L9 17L19 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
         <p className="text-xl font-bold text-[#0a0a0a] mb-1">Заявка отправлена</p>

@@ -86,7 +86,7 @@ export function Footer({ variant = "default" }: FooterProps) {
           <div className="flex animate-marquee whitespace-nowrap">
             {Array.from({ length: MARQUEE_REPEAT }).map((_, i) => (
               <span key={i} className="flex items-center gap-4 sm:gap-6 mx-3 sm:mx-4">
-                <span className="w-2 h-2 rounded-full bg-[#bcff00] shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-[#1C5E3C] shrink-0" />
                 <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-white/40">
                   {MARQUEE_TEXTS[i % MARQUEE_TEXTS.length]}
                 </span>
@@ -108,27 +108,27 @@ export function Footer({ variant = "default" }: FooterProps) {
               <h2 className="text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[100px] font-bold tracking-[-0.06em] leading-[0.9] text-white">
                 Пора навести<br />
                 порядок в{" "}
-                <span className="text-[#bcff00]">бизнесе.</span>
+                <span className="text-[#1C5E3C]">бизнесе.</span>
               </h2>
             </div>
 
             <div className="flex flex-col items-start lg:items-end gap-4 sm:gap-6 shrink-0">
               <a href={`mailto:${CONTACT_EMAIL}`} className="group flex items-center gap-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#bcff00] group-hover:scale-150 transition-transform duration-300" />
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#bcff00] transition-colors duration-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1C5E3C] group-hover:scale-150 transition-transform duration-300" />
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#1C5E3C] transition-colors duration-300">
                   {CONTACT_EMAIL}
                 </span>
               </a>
               <a href={CONTACT_PHONE_HREF} className="group flex items-center gap-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#bcff00] group-hover:scale-150 transition-transform duration-300" />
-                <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#bcff00] transition-colors duration-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1C5E3C] group-hover:scale-150 transition-transform duration-300" />
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white group-hover:text-[#1C5E3C] transition-colors duration-300">
                   {CONTACT_PHONE}
                 </span>
               </a>
               <TransitionLink
                 href="#contact"
                 label="Оставить заявку"
-                className="inline-flex items-center gap-3 rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-[#bcff00] text-black text-xs sm:text-sm font-bold tracking-tight hover:bg-white transition-colors duration-300 mt-2"
+                className="inline-flex items-center gap-3 rounded-full px-6 sm:px-8 py-3 sm:py-4 bg-[#1C5E3C] text-black text-xs sm:text-sm font-bold tracking-tight hover:bg-white transition-colors duration-300 mt-2"
               >
                 Оставить заявку
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="transform -rotate-45">
@@ -154,7 +154,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm sm:text-base font-medium text-white/60 hover:text-[#bcff00] transition-colors duration-300"
+                            className="text-sm sm:text-base font-medium text-white/60 hover:text-[#1C5E3C] transition-colors duration-300"
                           >
                             {link.label}
                           </a>
@@ -164,7 +164,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                           <TransitionLink
                             href={link.href}
                             label={link.label}
-                            className="text-sm sm:text-base font-medium text-white/60 hover:text-[#bcff00] transition-colors duration-300"
+                            className="text-sm sm:text-base font-medium text-white/60 hover:text-[#1C5E3C] transition-colors duration-300"
                           >
                             {link.label}
                           </TransitionLink>
@@ -180,7 +180,7 @@ export function Footer({ variant = "default" }: FooterProps) {
               className="group flex flex-col items-center gap-2 shrink-0 self-center lg:self-start"
               aria-label="Наверх"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#bcff00] group-hover:bg-[#bcff00] transition-all duration-300">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#1C5E3C] group-hover:bg-[#1C5E3C] transition-all duration-300">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white/40 group-hover:text-black transition-colors duration-300 rotate-180">
                   <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -213,7 +213,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                 <span className="text-white/40 normal-case tracking-normal text-[10px]">
                   Мы онлайн
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#bcff00] animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1C5E3C] animate-pulse" />
               </div>
             </div>
           </div>

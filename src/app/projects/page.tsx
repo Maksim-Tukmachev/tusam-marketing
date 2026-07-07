@@ -30,7 +30,7 @@ export default function ProjectsPage() {
           <header className="mb-8 sm:mb-12 md:mb-16">
             <SectionLabel label="Кому мы помогаем" />
             <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] text-black mt-6 sm:mt-8 leading-[1.1]">
-              С какими задачами приходят<span className="text-[#bcff00]">.</span>
+              С какими задачами приходят<span className="text-[#1C5E3C]">.</span>
             </h1>
             <p className="text-base sm:text-xl md:text-2xl font-medium tracking-tight text-[#747474] mt-5 sm:mt-8 max-w-2xl">
               Работаем с собственниками малого и среднего бизнеса <span className="text-black">на разных этапах — от старта до масштабирования</span>.

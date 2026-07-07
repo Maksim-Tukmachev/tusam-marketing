@@ -29,7 +29,7 @@ export function ProjectsListCta() {
     <section ref={ref} className="relative z-20 px-4 md:px-9 py-16 md:py-24 bg-white">
       <div className="max-w-[1520px] mx-auto">
         <div className="projects-cta-inner rounded-[24px] sm:rounded-[40px] bg-[#0a0a0a] p-6 sm:p-10 md:p-16 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#bcff00] rounded-full blur-[120px] opacity-20" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#1C5E3C] rounded-full blur-[120px] opacity-20" />
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-[-0.05em] text-white mb-2 sm:mb-3">
@@ -45,7 +45,7 @@ export function ProjectsListCta() {
               </ButtonPill>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-[#bcff00] font-semibold hover:underline text-center sm:text-left"
+                className="text-[#1C5E3C] font-semibold hover:underline text-center sm:text-left"
               >
                 {CONTACT_EMAIL}
               </a>

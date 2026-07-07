@@ -65,7 +65,7 @@ export function HeroSection() {
 
           <div className="mb-5 sm:mb-6 md:mb-7 lg:mb-8">
             <h1 className="text-[11vw] sm:text-[10vw] md:text-[72px] lg:text-[100px] xl:text-[140px] font-semibold tracking-[-0.06em] leading-[1.06] md:leading-[0.92] text-white mb-3 sm:mb-5 md:mb-7 lg:mb-9">
-              Рост чистой прибыли на  <span className="text-[#b2ff00]">15–40% в год</span>
+              Рост чистой прибыли на 15 – 40% в год
             </h1>
             <p className="text-base sm:text-lg md:text-[24px] lg:text-[34px] xl:text-[42px] font-medium tracking-[-0.03em] text-white/90 mt-2 sm:mt-3 md:mt-4 max-w-2xl">
               Без интуитивных решений и слива бюджетов. Разработаем стратегию и оцифруем бизнес-процессы за 30 дней.
@@ -74,7 +74,7 @@ export function HeroSection() {
 
           <div className="hidden lg:flex absolute right-16 top-1/2 -translate-y-1/2 flex-col gap-2 text-right">
             {["Экспресс-диагностика", "Бизнес-стратегия", "Стратегическое сопровождение", "Госзакупки под ключ", "Консалтинг для малого и среднего бизнеса"].map((item) => (
-              <span key={item} className="text-white text-lg font-semibold tracking-tight hover:text-[#bcff00] cursor-pointer transition-colors">
+              <span key={item} className="text-white text-lg font-semibold tracking-tight hover:text-[#1C5E3C] cursor-pointer transition-colors">
                 {item}
               </span>
             ))}
@@ -97,7 +97,7 @@ export function HeroSection() {
               </ButtonPill>
               <a
                 href={CONTACT_PHONE_HREF}
-                className="w-full lg:w-auto flex-1 lg:flex-none min-w-0 min-h-[48px] h-12 flex items-center justify-center py-3.5 px-5 sm:px-6 text-sm font-semibold text-[#0a0a0a] dark:text-white bg-white dark:bg-white/5 hover:bg-[#b2ff00] hover:text-black rounded-full transition-all shrink-0 lg:shrink-0 whitespace-nowrap box-border"
+                className="w-full lg:w-auto flex-1 lg:flex-none min-w-0 min-h-[48px] h-12 flex items-center justify-center py-3.5 px-5 sm:px-6 text-sm font-semibold text-[#0a0a0a] dark:text-white bg-white dark:bg-white/5 hover:bg-[#1C5E3C] hover:text-black rounded-full transition-all shrink-0 lg:shrink-0 whitespace-nowrap box-border"
                 aria-label="Позвонить"
               >
                 <span className="lg:hidden">{CONTACT_PHONE}</span>

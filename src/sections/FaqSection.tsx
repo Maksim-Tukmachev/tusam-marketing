@@ -192,11 +192,11 @@ export function FaqSection() {
             </p>
             <p className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter leading-[1.05] text-white mb-4">
               Напишите <br />
-              <span className="text-[#bcff00] inline-block group-hover:-translate-y-2 transition-transform duration-500 ease-out">
+              <span className="text-[#1C5E3C] inline-block group-hover:-translate-y-2 transition-transform duration-500 ease-out">
                 нам.
               </span>
             </p>
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#bcff00] text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-white transition-all duration-500 ease-out">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#1C5E3C] text-black flex items-center justify-center group-hover:scale-110 group-hover:bg-white transition-all duration-500 ease-out">
               <svg
                 width="20"
                 height="20"

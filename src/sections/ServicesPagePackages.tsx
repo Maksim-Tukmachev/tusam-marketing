@@ -34,7 +34,7 @@ export function ServicesPagePackages() {
                 }`}
               >
                 {isPopular && (
-                  <span className="absolute -top-3.5 left-8 px-4 py-1.5 rounded-full bg-[#b2ff00] text-black text-[10px] font-bold uppercase tracking-widest">
+                  <span className="absolute -top-3.5 left-8 px-4 py-1.5 rounded-full bg-[#1C5E3C] text-white text-[10px] font-bold uppercase tracking-widest">
                     Популярный
                   </span>
                 )}
@@ -62,7 +62,7 @@ export function ServicesPagePackages() {
                   {pkg.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm font-medium">
                       <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-[10px] font-bold ${
-                        isDark ? "bg-[#b2ff00] text-black" : "bg-black text-white"
+                        isDark ? "bg-[#1C5E3C] text-white" : "bg-black text-white"
                       }`}>
                         ✓
                       </span>

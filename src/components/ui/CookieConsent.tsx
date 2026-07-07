@@ -86,8 +86,8 @@ export function CookieConsent() {
           >
             <div className="rounded-[20px] bg-[#0a0a0a] border border-white/[0.08] p-5 sm:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-xl">
               <div className="flex items-start gap-3 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#bcff00]/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-[#bcff00]">
+                <div className="w-8 h-8 rounded-full bg-[#1C5E3C]/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-[#1C5E3C]">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z" fill="currentColor" />
                   </svg>
                 </div>
@@ -101,7 +101,7 @@ export function CookieConsent() {
                       href="/docs/Cookie_Notification.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#bcff00] hover:text-white underline underline-offset-2 transition-colors"
+                      className="text-[#1C5E3C] hover:text-white underline underline-offset-2 transition-colors"
                     >
                       Подробнее
                     </a>
@@ -113,7 +113,7 @@ export function CookieConsent() {
                 <button
                   type="button"
                   onClick={accept}
-                  className="flex-1 bg-[#bcff00] text-black text-xs font-bold py-2.5 rounded-full hover:bg-white transition-colors duration-200"
+                  className="flex-1 bg-[#1C5E3C] text-black text-xs font-bold py-2.5 rounded-full hover:bg-white transition-colors duration-200"
                 >
                   Принять
                 </button>

@@ -148,7 +148,7 @@ export default async function ServiceSlugPage({ params }: Props) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white selection:bg-[#b2ff00] selection:text-black">
+    <div className="min-h-screen flex flex-col bg-white selection:bg-[#1C5E3C] selection:text-black">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
@@ -247,7 +247,7 @@ export default async function ServiceSlugPage({ params }: Props) {
                   <ul className="space-y-4 sm:space-y-6">
                     {service.forWhom.map((item, i) => (
                       <li key={i} className="flex items-center gap-4 sm:gap-6 py-4 border-b border-black/10 last:border-0">
-                        <span className="w-2 h-2 rounded-full bg-[#b2ff00] shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-[#1C5E3C] shrink-0" />
                         <span className="text-base sm:text-lg md:text-xl text-black font-medium">{item}</span>
                       </li>
                     ))}
@@ -290,7 +290,7 @@ export default async function ServiceSlugPage({ params }: Props) {
                     <ul className="space-y-4 mb-8">
                       {service.benefits.map((item, i) => (
                         <li key={i} className="flex items-start gap-4">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#b2ff00] mt-2 shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#1C5E3C] mt-2 shrink-0" />
                           <span className="text-sm sm:text-base text-white/80 font-medium">{item}</span>
                         </li>
                       ))}
@@ -340,7 +340,7 @@ export default async function ServiceSlugPage({ params }: Props) {
                       {s.title}
                     </h3>
                     {s.priceFrom && (
-                      <p className="text-sm font-semibold text-[#666] group-hover:text-[#b2ff00] transition-colors">
+                      <p className="text-sm font-semibold text-[#666] group-hover:text-[#1C5E3C] transition-colors">
                         {s.priceFrom}
                       </p>
                     )}

@@ -68,7 +68,7 @@ export function ContactSection() {
               <div className="relative z-10 flex flex-col h-full gap-10 sm:gap-14">
                 <div className="flex justify-between items-start">
                   <div className="space-y-2">
-                    <div className="h-[2px] w-12 bg-[#bcff00]" />
+                    <div className="h-[2px] w-12 bg-[#1C5E3C]" />
                     <p className="text-white/40 text-[10px] font-mono uppercase tracking-[0.5em]">
                       Первый шаг — диагностика
                     </p>
@@ -78,7 +78,7 @@ export function ContactSection() {
 
                 <div className="mt-auto">
                   <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tighter leading-tight">
-                    Оставьте контакты — <span className="text-[#bcff00]">свяжемся</span> и согласуем время.
+                    Оставьте контакты — <span className="text-[#1C5E3C]">свяжемся</span> и согласуем время.
                   </h3>
                 </div>
               </div>

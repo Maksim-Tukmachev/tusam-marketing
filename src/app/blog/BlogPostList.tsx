@@ -47,7 +47,7 @@ export function BlogPostList({ posts }: Props) {
                 <p className="text-sm md:text-base font-medium text-[#747474] group-hover:text-white/70 transition-colors duration-500 line-clamp-2">
                   {post.excerpt}
                 </p>
-                <span className="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-wider text-black/40 group-hover:text-[#bcff00] transition-colors duration-500">
+                <span className="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-wider text-black/40 group-hover:text-[#1C5E3C] transition-colors duration-500">
                   Читать
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="transform group-hover:translate-x-1 transition-transform">
                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

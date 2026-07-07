@@ -68,7 +68,7 @@ function StepCard({ step, index }: { step: any; index: number }) {
     const tl = gsap.timeline({ id: `hoverEffect-${index}` });
     tl.to(card, { backgroundColor: "#0a0a0a", duration: 0.4, ease: "power2.out" }, 0)
       .to(dotsRef.current.slice(0, index + 1), {
-        backgroundColor: "#bcff00",
+        backgroundColor: "#1C5E3C",
         boxShadow: "0 0 12px rgba(188,255,0,0.5)",
         stagger: 0.05,
         duration: 0.3
@@ -77,7 +77,7 @@ function StepCard({ step, index }: { step: any; index: number }) {
     if (bgNumber) tl.to(bgNumber, { color: "#ffffff", opacity: 0.45, duration: 0.4 }, 0);
     if (clockCircleRef.current) {
       gsap.to(clockCircleRef.current, {
-        fill: "#bcff00",
+        fill: "#1C5E3C",
         duration: 0.3,
         ease: "power2.out"
       });
@@ -153,7 +153,7 @@ function StepCard({ step, index }: { step: any; index: number }) {
       <div className="pt-5 sm:pt-8 mt-auto border-t border-black/5 flex items-center justify-between relative z-10">
         <div className="flex items-center gap-3">
           <div className="clock-wrapper relative w-5 h-5">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#bcff00] w-full h-full">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#1C5E3C] w-full h-full">
               <circle ref={clockCircleRef} cx="12" cy="12" r="9" className="opacity-20 stroke-current" fill="transparent" />
               <path d="M12 7v5l2 2" className="origin-[12px_12px] stroke-current" strokeLinecap="round" />
             </svg>

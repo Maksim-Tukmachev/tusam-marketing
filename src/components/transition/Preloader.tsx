@@ -83,7 +83,7 @@ export function Preloader() {
                 {count}
               </motion.span>
               <motion.span 
-                className="text-[6vw] md:text-[4vw] font-bold text-[#bcff00] leading-none mb-8 md:mb-16"
+                className="text-[6vw] md:text-[4vw] font-bold text-[#1C5E3C] leading-none mb-8 md:mb-16"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -101,7 +101,7 @@ export function Preloader() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
-                className="text-[10px] md:text-xs font-mono font-bold text-[#bcff00] uppercase tracking-widest"
+                className="text-[10px] md:text-xs font-mono font-bold text-[#1C5E3C] uppercase tracking-widest"
               >
                 {loadingPhrases[phraseIndex]}
               </motion.span>

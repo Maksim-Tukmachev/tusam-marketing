@@ -178,7 +178,7 @@ export default async function BlogPostPage({ params }: Props) {
                       return (
                         <div
                           key={i}
-                          className="my-10 md:my-14 pl-6 md:pl-8 border-l-[3px] border-[#b2ff00]"
+                          className="my-10 md:my-14 pl-6 md:pl-8 border-l-[3px] border-[#1C5E3C]"
                         >
                           <p className="text-lg md:text-xl font-semibold text-[#111] leading-[1.6] tracking-[-0.01em]">
                             {paragraph}

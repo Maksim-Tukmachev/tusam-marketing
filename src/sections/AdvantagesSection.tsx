@@ -170,7 +170,7 @@ export function AdvantagesSection() {
                         <span className="text-[10px] uppercase tracking-[0.14em] font-semibold text-black/45">
                           {slide.pill}
                         </span>
-                        {index === activeSlide && <span className="h-1.5 w-1.5 rounded-full bg-[#b2ff00]" />}
+                        {index === activeSlide && <span className="h-1.5 w-1.5 rounded-full bg-[#1C5E3C]" />}
                       </div>
                       <p className="mt-1 text-[15px] sm:text-base font-semibold tracking-[-0.02em] leading-[1.25] text-black">
                         {slide.title}
@@ -193,7 +193,7 @@ export function AdvantagesSection() {
               <div className="absolute inset-x-0 top-0 h-[3px] bg-black/10">
                 <motion.div
                   key={activeSlide}
-                  className="h-full bg-[#b2ff00]"
+                  className="h-full bg-[#1C5E3C]"
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
                   transition={{ duration: AUTOPLAY_MS / 1000, ease: "linear" }}
@@ -249,7 +249,7 @@ export function AdvantagesSection() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/0 to-black/0" />
                         <div className="absolute left-3 bottom-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-black">
-                          <span className="w-2 h-2 rounded-full bg-[#b2ff00]" />
+                          <span className="w-2 h-2 rounded-full bg-[#1C5E3C]" />
                           {CASE_SLIDES[activeSlide].pill}
                         </div>
                       </div>

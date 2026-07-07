@@ -69,9 +69,9 @@ export function ContactPageCta() {
               {steps.map((step, i) => (
                 <div
                   key={i}
-                  className="contact-cta-step flex gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 rounded-[16px] sm:rounded-[24px] bg-white border border-black/5 hover:border-[#bcff00]/30 transition-colors"
+                  className="contact-cta-step flex gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 rounded-[16px] sm:rounded-[24px] bg-white border border-black/5 hover:border-[#1C5E3C]/30 transition-colors"
                 >
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#bcff00] shrink-0">
+                  <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1C5E3C] shrink-0">
                     {step.num}
                   </span>
                   <div>

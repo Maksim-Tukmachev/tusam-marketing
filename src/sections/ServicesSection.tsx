@@ -118,7 +118,7 @@ export function ServicesSection() {
             <div className="lg:col-span-5">
               <SectionLabel label="Продуктовая линейка" dark />
               <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] text-white mt-6">
-                Не советы. Система<span className="text-[#bcff00]">.</span>
+                Не советы. Система<span className="text-[#1C5E3C]">.</span>
               </h2>
             </div>
             <div className="lg:col-span-7 max-w-xl">
@@ -140,7 +140,7 @@ export function ServicesSection() {
                 >
                   <div className="flex items-center justify-between gap-3 sm:gap-4 py-8 md:py-10">
                     <div className="flex items-center gap-4 sm:gap-6 md:gap-12 min-w-0 flex-1">
-                      <span className={`text-sm font-bold font-mono shrink-0 transition-colors duration-500 ${isActive ? "text-[#bcff00]" : "text-white/30"}`}>
+                      <span className={`text-sm font-bold font-mono shrink-0 transition-colors duration-500 ${isActive ? "text-[#1C5E3C]" : "text-white/30"}`}>
                         0{index + 1}
                       </span>
                       <h3 className={`text-2xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.04em] transition-all duration-500 break-words min-w-0 ${isActive ? "text-white translate-x-2" : "text-white/40 group-hover:text-white/70"}`}>
@@ -153,7 +153,7 @@ export function ServicesSection() {
                       className={`relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full border flex shrink-0 items-center justify-center transition-all duration-500 ${
                         isActive
                           ? "bg-white border-white rotate-90"
-                          : "bg-[#bcff00]/20 border-black rotate-0 group-hover:bg-white/15 group-hover:border-white"
+                          : "bg-[#1C5E3C]/20 border-black rotate-0 group-hover:bg-white/15 group-hover:border-white"
                       }`}
                     >
                       <div className={`relative w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 transition-all duration-500 ${isActive ? "scale-110 brightness-0" : "scale-100"}`}>
@@ -192,7 +192,7 @@ export function ServicesSection() {
                           label={service.title}
                           className="inline-flex w-full sm:w-auto"
                         >
-                          <span className="inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#b2ff00] text-black shadow-[0_2px_20px_rgba(178,255,0,0.25)] hover:shadow-[0_4px_30px_rgba(178,255,0,0.45)] transition-all duration-300 overflow-hidden group/btn">
+                          <span className="inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-[50px] px-8 py-4 text-sm font-semibold tracking-[-0.02em] leading-[100%] bg-[#1C5E3C] text-white shadow-[0_2px_20px_rgba(28,94,60,0.25)] hover:shadow-[0_4px_30px_rgba(28,94,60,0.45)] transition-all duration-300 overflow-hidden group/btn">
                             <span className="relative">Оставить заявку</span>
                             <span className="relative w-2.5 h-2.5 rounded-full bg-black shrink-0 transition-transform duration-300 group-hover/btn:scale-125" aria-hidden />
                           </span>

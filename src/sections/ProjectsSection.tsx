@@ -12,7 +12,7 @@ export function ProjectsSection() {
         <div className="mb-16 md:mb-24">
           <SectionLabel label="Кому мы помогаем" />
           <h2 className="text-4xl sm:text-5xl md:text-8xl font-bold tracking-[-0.05em] text-black mt-8">
-            С какими задачами приходят<span className="text-[#b2ff00]">.</span>
+            С какими задачами приходят<span className="text-[#1C5E3C]">.</span>
           </h2>
           <div className="flex flex-col md:flex-row justify-between md:items-end gap-8 mt-8">
             <p className="text-xl md:text-2xl font-medium tracking-tight text-[#747474] max-w-xl">
@@ -128,8 +128,8 @@ function ProjectCard({ project, priority = false }: { project: ProjectItem; prio
                 </div>
 
                 {/* Arrow */}
-                <div className="opacity-0 translate-y-4 md:group-hover/card:opacity-100 md:group-hover/card:translate-y-0 transition-all duration-500 ease-out delay-100 w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm md:group-hover/card:bg-[#b2ff00] md:group-hover/card:border-[#b2ff00] shrink-0 pointer-events-auto">
-                  <svg width="20" height="20" viewBox="0 0 18 18" fill="none" className="text-white md:group-hover/card:text-black transition-colors duration-300">
+                <div className="opacity-0 translate-y-4 md:group-hover/card:opacity-100 md:group-hover/card:translate-y-0 transition-all duration-500 ease-out delay-100 w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm md:group-hover/card:bg-[#1C5E3C] md:group-hover/card:border-[#1C5E3C] shrink-0 pointer-events-auto">
+                  <svg width="20" height="20" viewBox="0 0 18 18" fill="none" className="text-white transition-colors duration-300">
                     <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
@@ -144,8 +144,8 @@ function ProjectCard({ project, priority = false }: { project: ProjectItem; prio
                 <p className="text-[10px] font-bold text-black/50 uppercase tracking-[0.2em] mb-1">{project.sector}</p>
                 <h3 className="text-black text-xl font-bold tracking-tight">{project.name}</h3>
               </div>
-              <div className="w-11 h-11 rounded-full border-2 border-black/10 flex items-center justify-center bg-[#b2ff00] shrink-0">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="text-black">
+              <div className="w-11 h-11 rounded-full border-2 border-black/10 flex items-center justify-center bg-[#1C5E3C] shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="text-white">
                   <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>

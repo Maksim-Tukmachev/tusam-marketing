@@ -56,9 +56,9 @@ export function SidebarContactForm() {
   if (submitted) {
     return (
       <div className="rounded-[24px] bg-[#0a0a0a] p-6 md:p-8 text-center">
-        <div className="w-12 h-12 rounded-full bg-[#b2ff00] mx-auto mb-4 flex items-center justify-center">
+        <div className="w-12 h-12 rounded-full bg-[#1C5E3C] mx-auto mb-4 flex items-center justify-center">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 13L9 17L19 7" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 13L9 17L19 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
         <p className="text-lg font-bold text-white mb-1">Заявка отправлена</p>
@@ -68,7 +68,7 @@ export function SidebarContactForm() {
   }
 
   const inputClass =
-    "w-full bg-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 font-medium focus:outline-none focus:ring-1 focus:ring-[#b2ff00]/50 transition-shadow";
+    "w-full bg-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 font-medium focus:outline-none focus:ring-1 focus:ring-[#1C5E3C]/50 transition-shadow";
 
   return (
     <form onSubmit={handleSubmit} className="rounded-[24px] bg-[#0a0a0a] p-6 md:p-8">
@@ -106,7 +106,7 @@ export function SidebarContactForm() {
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
           required
-          className="mt-0.5 w-3.5 h-3.5 rounded border-white/20 bg-white/10 text-[#b2ff00] focus:ring-[#b2ff00]/30 shrink-0"
+          className="mt-0.5 w-3.5 h-3.5 rounded border-white/20 bg-white/10 text-[#1C5E3C] focus:ring-[#1C5E3C]/30 shrink-0"
         />
         <span className="text-[11px] text-white/40 leading-relaxed">
           Согласен на обработку данных в соответствии с{" "}
@@ -129,7 +129,7 @@ export function SidebarContactForm() {
       <button
         type="submit"
         disabled={!consent || loading}
-        className="w-full bg-[#b2ff00] text-black rounded-xl py-3 text-sm font-bold tracking-tight hover:bg-[#a3e600] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+        className="w-full bg-[#1C5E3C] text-white rounded-xl py-3 text-sm font-bold tracking-tight hover:bg-[#164a2f] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
       >
         {loading ? "Отправка…" : "Оставить заявку"}
       </button>
