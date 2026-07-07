@@ -1,0 +1,47 @@
+import type { Metadata } from "next";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
+import { ContactSection } from "@/sections/ContactSection";
+import { BlogPostList } from "./BlogPostList";
+
+export const metadata: Metadata = {
+  title: "Блог | Стратегия, финансы и управление бизнесом",
+  description:
+    "Прикладные материалы о бизнес-стратегии, оцифровке финмодели, выводе собственника из операционки и госзакупках. Научный подход без воды.",
+  alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: {
+    title: "Блог Асыльяр Бизнес-консалтинг | Стратегия и управление",
+    description:
+      "Стратегия, финансы, управление и госзакупки. Экспертиза и методология без громких обещаний.",
+    url: `${SITE_URL}/blog`,
+    type: "website",
+  },
+};
+
+export default function BlogPage() {
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header />
+        <main className="flex-1 min-h-0 pt-8 pb-16 sm:pt-12 sm:pb-24 md:pt-16 md:pb-32">
+        <div className="max-w-[1520px] mx-auto px-4 md:px-9 w-full mb-12 sm:mb-20">
+          <header className="mb-10 sm:mb-16 md:mb-24">
+            <SectionLabel label="Блог" />
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-[1.1] text-black mt-6 sm:mt-8">
+              Экспертиза<br />
+              <span className="text-[#747474]">и методология.</span>
+            </h1>
+            <p className="text-base sm:text-xl md:text-2xl font-medium tracking-tight text-[#747474] mt-5 sm:mt-8 max-w-2xl">
+              Без воды и громких обещаний. Прикладные материалы о стратегии, финансах и управлении бизнесом.
+            </p>
+          </header>
+
+          <BlogPostList posts={BLOG_POSTS} />
+        </div>
+        <ContactSection />
+      </main>
+      <Footer variant="compact" />
+    </div>
+  );
+}
