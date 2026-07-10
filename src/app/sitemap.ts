@@ -3,6 +3,8 @@ import { PROJECTS, BLOG_POSTS } from "@/lib/constants";
 
 const BASE_URL = "https://asylyar.ru";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 

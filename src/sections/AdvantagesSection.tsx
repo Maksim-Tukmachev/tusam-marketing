@@ -17,49 +17,35 @@ export const CASE_SLIDES = [
   {
     id: "01",
     pill: "Стратегия",
-    title: "Системный рост прибыли по научной методологии",
+    title: "Системный рост по научной методологии",
     subtitle:
-      "Проводим SWOT- и PESTEL-анализ, оцифровываем финансовую модель и выстраиваем оргструктуру. На выходе — дорожная карта роста чистой прибыли с измеримым результатом.",
+      "Проводим SWOT- и PESTEL-анализ, выстраиваем оргструктуру и формируем дорожную карту изменений. Научно и практично — с фокусом на измеримый результат.",
     image: PROJECTS[0]?.imageUrl ?? ADVANTAGES_IMAGE,
     imageAlt: "Разработка бизнес-стратегии для малого и среднего бизнеса",
-    focusMetric: "15–40%",
-    focusMetricLabel: "цель по росту чистой прибыли за год",
-    stats: [
-      { label: "Срок разработки", value: "30 дней" },
-      { label: "Вовлечение команды", value: "до 4 ч/нед" },
-      { label: "Методология", value: "SWOT + PESTEL" },
-    ],
+    highlights: ["SWOT + PESTEL", "Дорожная карта", "Научный подход"],
   },
   {
     id: "02",
     pill: "Управление",
     title: "Вывод собственника из операционного управления",
     subtitle:
-      "Переводим хаотичные процессы в оцифрованные алгоритмы и распределяем зоны ответственности. Бизнес начинает работать и расти без постоянного ручного контроля владельца.",
+      "Переводим хаотичные процессы в понятные алгоритмы и распределяем зоны ответственности. Бизнес начинает работать и расти без постоянного ручного контроля владельца.",
     image: PROJECTS[3]?.imageUrl ?? ADVANTAGES_IMAGE,
     imageAlt: "Вывод собственника из операционки и системное управление",
-    focusMetric: "×0",
-    focusMetricLabel: "ручного контроля в рутине",
-    stats: [
-      { label: "Формат", value: "стратегия + трекинг" },
-      { label: "Контроль", value: "аудит KPI" },
-      { label: "Результат", value: "автономная система" },
-    ],
+    highlights: ["Автономная система", "Зоны ответственности", "Аудит показателей"],
   },
   {
     id: "03",
-    pill: "Госзакупки",
-    title: "Выход на рынок госзакупок под ключ",
+    pill: "Безопасность",
+    title: "Карта рисков, контроль и экономическая безопасность",
     subtitle:
-      "Открываем стабильный канал продаж через госзаказ: аккредитация в ЕИС, подбор тендеров, подготовка и подача заявки по 44-ФЗ и 223-ФЗ без риска отклонения.",
+      "Гибкий подход под каждого клиента. Работаем с бюрократическими рисками научно и практично: прогнозируем тенденции рынка госзакупок, выстраиваем воронку продаж и сопровождаем выход на госзаказ.",
     image: PROJECTS[4]?.imageUrl ?? ADVANTAGES_IMAGE,
-    imageAlt: "Сопровождение по госзакупкам 44-ФЗ и 223-ФЗ",
-    focusMetric: "1%",
-    focusMetricLabel: "гонорар успеха при победе",
-    stats: [
-      { label: "Старт", value: "от 45 000 ₽" },
-      { label: "Законы", value: "44-ФЗ / 223-ФЗ" },
-      { label: "Гарантия", value: "допуск к торгам" },
+    imageAlt: "Карта рисков, внутренний контроль и сопровождение госзакупок",
+    highlights: [
+      "Карта рисков и внутренний контроль",
+      "Прогнозирование рынка госзакупок",
+      "Воронка продаж",
     ],
   },
 ] as const;
@@ -175,8 +161,8 @@ export function AdvantagesSection() {
                       <p className="mt-1 text-[15px] sm:text-base font-semibold tracking-[-0.02em] leading-[1.25] text-black">
                         {slide.title}
                       </p>
-                      <p className="mt-1 text-xs sm:text-sm leading-[1.4] text-[#747474]">
-                        {slide.stats[0].label}: {slide.stats[0].value}
+                      <p className="mt-1 text-xs sm:text-sm leading-[1.4] text-[#747474] line-clamp-2">
+                        {slide.highlights[0]}
                       </p>
                     </div>
                   </div>
@@ -263,27 +249,20 @@ export function AdvantagesSection() {
                         {CASE_SLIDES[activeSlide].subtitle}
                       </p>
 
-                      <div className="stat-card mt-3 sm:mt-5 rounded-[12px] sm:rounded-[16px] bg-white border border-black/10 p-3 sm:p-5 inline-block">
-                        <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.05em] leading-none text-black">
-                          {CASE_SLIDES[activeSlide].focusMetric}
-                        </p>
-                        <p className="mt-2 text-xs sm:text-sm font-medium text-[#747474]">
-                          {CASE_SLIDES[activeSlide].focusMetricLabel}
-                        </p>
+                      <div className="flex flex-wrap gap-2 mt-4 sm:mt-6">
+                        {CASE_SLIDES[activeSlide].highlights.map((item) => (
+                          <span
+                            key={item}
+                            className="stat-card px-3 sm:px-4 py-2 rounded-full bg-white border border-black/10 text-xs sm:text-sm font-semibold text-black/80"
+                          >
+                            {item}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-auto">
-                    {CASE_SLIDES[activeSlide].stats.map((item) => (
-                      <div key={item.label} className="stat-card rounded-[10px] sm:rounded-[16px] bg-white border border-black/10 p-2.5 sm:p-4">
-                        <p className="text-[9px] sm:text-xs uppercase tracking-[0.12em] text-black/45 font-semibold truncate">{item.label}</p>
-                        <p className="mt-1 sm:mt-2 text-base sm:text-xl md:text-2xl font-semibold tracking-[-0.03em] text-black">{item.value}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mt-auto">
                     <div className="flex items-center gap-2">
                       {CASE_SLIDES.map((slide, index) => (
                         <button

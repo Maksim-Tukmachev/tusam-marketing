@@ -6,6 +6,8 @@ import { ClientsSection } from "@/sections/ClientsSection";
 import { AdvantagesSection } from "@/sections/AdvantagesSection";
 import { AuditCtaSection } from "@/sections/AuditCtaSection";
 import { ServicesSection } from "@/sections/ServicesSection";
+import { SpeakerSection } from "@/sections/SpeakerSection";
+import { ExpertiseSection } from "@/sections/ExpertiseSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { ShowreelSection } from "@/sections/ShowreelSection";
 import { BlogSection } from "@/sections/BlogSection";
@@ -14,9 +16,9 @@ import { ContactSection } from "@/sections/ContactSection";
 import { FAQ_ITEMS, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Асыльяр Бизнес-консалтинг | Рост чистой прибыли на 15–40% в год",
+  title: "Асыльяр Бизнес-консалтинг | Стратегический консалтинг для бизнеса",
   description:
-    "Разработаем пошаговую стратегию и оцифруем бизнес-процессы по научной методологии Доктора наук. Начните с экспресс-диагностики бизнеса.",
+    "Разработаем пошаговую стратегию и выстроим управляемую систему роста по научной методологии Кандидата наук. Начните с экспресс-диагностики бизнеса.",
   alternates: {
     canonical: SITE_URL,
   },
@@ -44,7 +46,7 @@ function HomeJsonLd() {
     name: "Асыльяр Бизнес-консалтинг",
     url: SITE_URL,
     description:
-      "Стратегический консалтинг для малого и среднего бизнеса: экспресс-диагностика, разработка бизнес-стратегии, стратегическое сопровождение, госзакупки. Научная методология Доктора наук.",
+      "Стратегический консалтинг для малого и среднего бизнеса: экспресс-диагностика, разработка бизнес-стратегии, стратегическое сопровождение, госзакупки. Научная методология Кандидата наук.",
     priceRange: "от 9 900 ₽",
     areaServed: "Россия",
     hasOfferCatalog: {
@@ -93,6 +95,8 @@ export default function Home() {
         <AdvantagesSection />
         <AuditCtaSection />
         <ServicesSection />
+        <SpeakerSection />
+        <ExpertiseSection />
         <ProjectsSection />
         <ShowreelSection />
         <BlogSection />

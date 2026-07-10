@@ -63,17 +63,22 @@ export function HeroSection() {
 
         <div className="hero-content relative z-10 flex flex-col flex-1 px-5 sm:px-6 md:px-10 lg:px-16 py-6 sm:py-8 md:py-10 lg:py-14">
 
-          <div className="mb-5 sm:mb-6 md:mb-7 lg:mb-8">
-            <h1 className="text-[11vw] sm:text-[10vw] md:text-[72px] lg:text-[100px] xl:text-[140px] font-semibold tracking-[-0.06em] leading-[1.06] md:leading-[0.92] text-white mb-3 sm:mb-5 md:mb-7 lg:mb-9">
-              Рост чистой прибыли на 15 – 40% в год
+          <div className="mb-5 sm:mb-6 md:mb-7 lg:mb-8 lg:max-w-[65%] xl:max-w-[58%]">
+            <h1 className="text-[13vw] sm:text-[10.5vw] md:text-[64px] lg:text-[76px] xl:text-[92px] 2xl:text-[108px] font-semibold tracking-[-0.05em] leading-[1.04] md:leading-[0.96] text-white mb-3 sm:mb-5 md:mb-7 lg:mb-9 text-balance">
+              Бизнес
+              на цифрах<br />
+              <span className="text-[#1C5E3C]">
+                стратегия<br />
+                и внедрение
+              </span>
             </h1>
             <p className="text-base sm:text-lg md:text-[24px] lg:text-[34px] xl:text-[42px] font-medium tracking-[-0.03em] text-white/90 mt-2 sm:mt-3 md:mt-4 max-w-2xl">
-              Без интуитивных решений и слива бюджетов. Разработаем стратегию и оцифруем бизнес-процессы за 30 дней.
+              Без интуитивных решений и слива бюджетов. Разработаем стратегию и выстроим управляемую систему роста.
             </p>
           </div>
 
           <div className="hidden lg:flex absolute right-16 top-1/2 -translate-y-1/2 flex-col gap-2 text-right">
-            {["Экспресс-диагностика", "Бизнес-стратегия", "Стратегическое сопровождение", "Госзакупки под ключ", "Консалтинг для малого и среднего бизнеса"].map((item) => (
+            {["Экспресс-диагностика", "Аудит закупок и диагностика", "Бизнес-стратегия", "Стратегическое сопровождение", "Госзакупки под ключ"].map((item) => (
               <span key={item} className="text-white text-lg font-semibold tracking-tight hover:text-[#1C5E3C] cursor-pointer transition-colors">
                 {item}
               </span>
@@ -83,7 +88,8 @@ export function HeroSection() {
           <div className="mt-auto flex flex-col lg:flex-row items-start lg:items-end justify-between gap-5 md:gap-6 lg:gap-8">
             <div className="hidden lg:block max-w-md">
               <p className="text-base lg:text-xl text-[#999797] leading-[1.3] tracking-tight">
-                Научная методология и практический опыт управления. <span className="text-white font-semibold">Работаем на измеримый финансовый результат.</span>
+                Малый и средний бизнес, закупки, внутренний контроль.{" "}
+                <span className="text-white font-semibold">Не продаём презентации — доводим изменения до результата.</span>
               </p>
             </div>
             <div className="flex flex-col lg:flex-row gap-2 lg:gap-1.5 p-2 lg:p-1.5 bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded-2xl lg:rounded-full shadow-lg border border-gray-200/50 dark:border-white/10 w-full lg:w-max mx-auto lg:mx-0 items-stretch lg:items-center">
